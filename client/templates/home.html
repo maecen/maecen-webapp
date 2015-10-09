@@ -5,105 +5,114 @@ controller: HomeCtrl
 animationIn: fadeIn
 animationOut: fadeOut
 ---
-<!-- ROLE CARDS -->
-<div class="grid-block padding-top padding-bottom">
-  <!-- Maecen -->
-  <div class="grid-content medium-6 small-12">
-    <!-- Card -->
-    <div class="card">
-      <!-- Title -->
-      <div class="card-divider">
-        <h4 class="text-center">{{'MAECEN_TITEL' | translate}}<h4/>
+
+<div class="grid-container">
+  <br/><br/>
+  <!-- ROLE CARDS -->
+  <div class="grid-block padding-top padding-bottom">
+    <!-- Maecen -->
+    <div class="grid-content medium-6 small-12">
+      <!-- Card -->
+      <div class="card">
+        <!-- Title -->
+        <div class="card-divider">
+          <h4 class="text-center">Mæcen<h4/>
+        </div>
+        <!-- Caption -->
+        <div class="card-section">
+          <h4>Bliv eksklusiv fan</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi iusto reprehenderit voluptatem odio deleniti provident aliquam qui magnam aspernatur necessitatibus.</p>
+        </div>
       </div>
-      <!-- Caption -->
-      <div class="card-section">
-        <h4>Bliv eksklusiv fan</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi iusto reprehenderit voluptatem odio deleniti provident aliquam qui magnam aspernatur necessitatibus.</p>
-      </div>
+      <!-- /card -->
+
     </div>
-    <!-- /card -->
+    <!-- /maecen -->
+
+    <!-- Creative -->
+    <div class="grid-content medium-6 small-12">
+      <!-- Card -->
+      <div class="card">
+        <!-- Titel -->
+        <div class="card-divider">
+          <h4 class="text-center">Kreativ<h4/>
+        </div>
+        <!-- Caption -->
+        <div class="card-section">
+          <h4>Udgiv indhold</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi iusto reprehenderit voluptatem odio deleniti provident aliquam qui magnam aspernatur necessitatibus.</p>
+        </div>
+      </div>
+      <!-- /card -->
+      </div>
 
   </div>
-  <!-- /maecen -->
+  <!-- /creative -->
+  <!-- /ROLE CARDS -->
 
-  <!-- Creative -->
-  <div class="grid-content medium-6 small-12">
-    <!-- Card -->
-    <div class="card">
-      <!-- Titel -->
-      <div class="card-divider">
-        <h4 class="text-center">{{'CREATIVE_TITEL' | translate}}<h4/>
-      </div>
-      <!-- Caption -->
-      <div class="card-section">
-        <h4>Udgiv indhold</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi iusto reprehenderit voluptatem odio deleniti provident aliquam qui magnam aspernatur necessitatibus.</p>
-      </div>
-    </div>
-    <!-- /card -->
-    </div>
-
-</div>
-<!-- /creative -->
-<!-- /ROLE CARDS -->
-
-<div class="grid-content">
-  <hr/>
-</div>
-
-<!-- REGISRTATION -->
-<form novalidate>
-
-  <!-- Name -->
   <div class="grid-content">
-    <label><strong>Navn og efternavn</strong></label>
+    <hr/>
   </div>
-  <div class="grid-block">
+
+  <!-- REGISRTATION -->
+  <form novalidate>
+
+    <!-- Name -->
+    <div class="grid-content">
+      <label><strong>Navn og efternavn</strong></label>
+    </div>
+    <div class="grid-block">
       <div class="grid-content medium-6 small-12">
         <input type="text" placeholder="Fornavn">
       </div>
-      <div class="grid-content meduim-6 small-12">
+      <div class="grid-content medium-6 small-12">
         <input type="text" placeholder="Efternavn">
       </div>
-  </div>
-  <!-- /name -->
+    </div>
+    <!-- /name -->
 
-  <!-- Contact information -->
+    <!-- Contact information -->
+    <div class="grid-content">
+      <label><strong>Kontakt information</strong></label>
+    </div>
+    <div class="grid-block">
+      <div class="grid-content medium-6 small-12">
+        <input type="text" placeholder="E-mail fx. johndoe@gmail.com">
+      </div>
+      <div class="grid-content medium-6 small-12">
+        <input type="text" placeholder="Telefon fx. 42819703">
+      </div>
+    </div>
+    <!-- /contact information -->
+
+    <div class="grid-block padding-top">
+      <!-- Password -->
+      <div class="grid-content medium-6 small-12">
+        <label><strong>Password</strong></label>
+          <input type="password" placeholder="Password">
+          <input type="password" placeholder="Gentag password">
+      </div>
+      <!-- /password -->
+
+      <!-- Maecen or creative -->
+      <div class="grid-content medium-6 small-12">
+        <label><strong>Er du mæcen eller kreativ?</strong></label>
+
+        <!-- Creative -->
+        <a class="alert hollow button expand"><strong>Kreativ!</strong></a>
+        <!-- /creative -->
+
+        <!-- Maecen -->
+        <a class="warning hollow button expand"><strong>Maecen!</strong></a>
+        <!-- /maecen -->
+      </div>
+      <!-- /macen or creative -->
+    </div>
+  </form>
+  <!-- /registration -->
+  <hr/>
   <div class="grid-content">
-    <label><strong>Kontakt information</strong></label>
+    <a class="success button expand"><strong>Registrer</strong></a>
   </div>
-  <div class="grid-block">
-    <div class="grid-content medium-6 small-12">
-      <input type="text" placeholder="E-mail fx. johndoe@gmail.com">
-    </div>
-    <div class="grid-content medium-6 small-12">
-      <input type="text" placeholder="Telefon fx. 42819703">
-    </div>
-  </div>
-  <!-- /contact information -->
-
-  <div class="grid-block padding-top">
-    <!-- Password -->
-    <div class="grid-content medium-6 small-12">
-      <label><strong>Password</strong></label>
-        <input type="text" placeholder="Password">
-        <input type="text" placeholder="Gentag password">
-    </div>
-    <!-- /password -->
-
-    <!-- Maecen or creative -->
-    <div class="grid-content medium-6 small-12">
-      <label><strong>Er du mæcen eller kreativ?</strong></label>
-
-      <!-- Creative -->
-      <a class="button expand"><strong>Kreativ!</strong></a>
-      <!-- /creative -->
-
-      <!-- Maecen -->
-      <a class="button expand"><strong>Maecen!</strong></a>
-      <!-- /maecen -->
-    </div>
-    <!-- /macen or creative -->
-  </div>
-</form>
-<!-- /registration -->
+  <hr/>
+</div>
