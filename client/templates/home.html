@@ -1,15 +1,15 @@
 ---
-name: home
+name: registrate
 url: /
-controller: HomeCtrl
+controller: RegistrationCtrl
 animationIn: fadeIn
 animationOut: fadeOut
 ---
 
 <div class="grid-container">
-  <br/><br/>
+
   <!-- ROLE CARDS -->
-  <div class="grid-block padding-top padding-bottom">
+  <div class="grid-block padding-top padding-bottom padding-top">
     <!-- Maecen -->
     <div class="grid-content medium-6 small-12">
       <!-- Card -->
@@ -50,69 +50,69 @@ animationOut: fadeOut
   <!-- /creative -->
   <!-- /ROLE CARDS -->
 
-  <div class="grid-content">
-    <hr/>
-  </div>
+  <hr/>
 
   <!-- REGISRTATION -->
   <form novalidate>
 
     <!-- Name -->
-    <div class="grid-content">
-      <label><strong>Navn og efternavn</strong></label>
+    <div class="grid-block">
+      <div class="grid-content">
+        <label><strong>Navn og efternavn</strong></label>
+      </div>
     </div>
     <div class="grid-block">
       <div class="grid-content medium-6 small-12">
-        <input type="text" placeholder="Fornavn">
+        <!-- Firstname --->
+        <input ng-model="registrationForm.first_name" type="text" placeholder="Fornavn">
+        <!-- /firstname -->
       </div>
       <div class="grid-content medium-6 small-12">
-        <input type="text" placeholder="Efternavn">
+        <!-- Lastname -->
+        <input ng-model="registrationForm.last_name" type="text" placeholder="Efternavn">
+        <!-- /lastname -->
       </div>
     </div>
     <!-- /name -->
 
     <!-- Contact information -->
-    <div class="grid-content">
-      <label><strong>Kontakt information</strong></label>
-    </div>
     <div class="grid-block">
-      <div class="grid-content medium-6 small-12">
-        <input type="text" placeholder="E-mail fx. johndoe@gmail.com">
-      </div>
-      <div class="grid-content medium-6 small-12">
-        <input type="text" placeholder="Telefon fx. 42819703">
+      <div class="grid-content medium-12">
+        <label><strong>Kontakt information</strong>
+            <input ng-model="registrationForm.email" type="text" placeholder="E-mail fx. johndoe@gmail.com">
+        </label>
       </div>
     </div>
     <!-- /contact information -->
 
-    <div class="grid-block padding-top">
-      <!-- Password -->
-      <div class="grid-content medium-6 small-12">
+    <div class="grid-block">
+      <div class="grid-content">
         <label><strong>Password</strong></label>
-          <input type="password" placeholder="Password">
-          <input type="password" placeholder="Gentag password">
       </div>
-      <!-- /password -->
-
-      <!-- Maecen or creative -->
+    </div>
+    <div class="grid-block">
       <div class="grid-content medium-6 small-12">
-        <label><strong>Er du mæcen eller kreativ?</strong></label>
-
-        <!-- Creative -->
-        <a class="alert hollow button expand"><strong>Kreativ!</strong></a>
-        <!-- /creative -->
-
-        <!-- Maecen -->
-        <a class="warning hollow button expand"><strong>Maecen!</strong></a>
-        <!-- /maecen -->
+          <!-- Password -->
+          <input ng-model="registrationForm.password" type="password" placeholder="Password">
+          <!-- /password -->
       </div>
-      <!-- /macen or creative -->
+      <div class="grid-content medium-6 small-12">
+        <!-- Password confirmation -->
+        <input ng-model="registrationForm.password_confirmation" type="password" placeholder="Gentag password">
+        <!-- /password confirmation -->
+      </div>
     </div>
   </form>
-  <!-- /registration -->
+
   <hr/>
-  <div class="grid-content">
-    <a class="success button expand"><strong>Registrer</strong></a>
+
+  <!-- Registration button -->
+  <div class="grid-block">
+    <div class="grid-content">
+      <a ng-click="registrateUser(registrationForm)" class="success button expand"><strong>Registrer</strong></a>
+    </div>
   </div>
-  <hr/>
+  <!-- /registration button -->
+
+  <!-- /registration -->
 </div>

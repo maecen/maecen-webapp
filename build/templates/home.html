@@ -1,102 +1,111 @@
-<!-- ROLE CARDS -->
-<div class="grid-block padding-top padding-bottom">
-  <!-- Maecen -->
-  <div class="grid-content medium-6 small-12">
-    <!-- Card -->
-    <div class="card">
-      <!-- Title -->
-      <div class="card-divider">
-        <h4 class="text-center">{{'MAECEN_TITEL' | translate}}<h4/>
+
+<div class="grid-container">
+
+  <!-- ROLE CARDS -->
+  <div class="grid-block padding-top padding-bottom padding-top">
+    <!-- Maecen -->
+    <div class="grid-content medium-6 small-12">
+      <!-- Card -->
+      <div class="card">
+        <!-- Title -->
+        <div class="card-divider">
+          <h4 class="text-center">Mæcen<h4/>
+        </div>
+        <!-- Caption -->
+        <div class="card-section">
+          <h4>Bliv eksklusiv fan</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi iusto reprehenderit voluptatem odio deleniti provident aliquam qui magnam aspernatur necessitatibus.</p>
+        </div>
       </div>
-      <!-- Caption -->
-      <div class="card-section">
-        <h4>Bliv eksklusiv fan</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi iusto reprehenderit voluptatem odio deleniti provident aliquam qui magnam aspernatur necessitatibus.</p>
-      </div>
+      <!-- /card -->
+
     </div>
-    <!-- /card -->
+    <!-- /maecen -->
+
+    <!-- Creative -->
+    <div class="grid-content medium-6 small-12">
+      <!-- Card -->
+      <div class="card">
+        <!-- Titel -->
+        <div class="card-divider">
+          <h4 class="text-center">Kreativ<h4/>
+        </div>
+        <!-- Caption -->
+        <div class="card-section">
+          <h4>Udgiv indhold</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi iusto reprehenderit voluptatem odio deleniti provident aliquam qui magnam aspernatur necessitatibus.</p>
+        </div>
+      </div>
+      <!-- /card -->
+      </div>
 
   </div>
-  <!-- /maecen -->
+  <!-- /creative -->
+  <!-- /ROLE CARDS -->
 
-  <!-- Creative -->
-  <div class="grid-content medium-6 small-12">
-    <!-- Card -->
-    <div class="card">
-      <!-- Titel -->
-      <div class="card-divider">
-        <h4 class="text-center">{{'CREATIVE_TITEL' | translate}}<h4/>
-      </div>
-      <!-- Caption -->
-      <div class="card-section">
-        <h4>Udgiv indhold</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi iusto reprehenderit voluptatem odio deleniti provident aliquam qui magnam aspernatur necessitatibus.</p>
-      </div>
-    </div>
-    <!-- /card -->
-    </div>
-
-</div>
-<!-- /creative -->
-<!-- /ROLE CARDS -->
-
-<div class="grid-content">
   <hr/>
-</div>
 
-<!-- REGISRTATION -->
-<form novalidate>
+  <!-- REGISRTATION -->
+  <form novalidate>
 
-  <!-- Name -->
-  <div class="grid-content">
-    <label><strong>Navn og efternavn</strong></label>
-  </div>
-  <div class="grid-block">
+    <!-- Name -->
+    <div class="grid-block">
+      <div class="grid-content">
+        <label><strong>Navn og efternavn</strong></label>
+      </div>
+    </div>
+    <div class="grid-block">
       <div class="grid-content medium-6 small-12">
-        <input type="text" placeholder="Fornavn">
+        <!-- Firstname --->
+        <input ng-model="registrationForm.first_name" type="text" placeholder="Fornavn">
+        <!-- /firstname -->
       </div>
-      <div class="grid-content meduim-6 small-12">
-        <input type="text" placeholder="Efternavn">
+      <div class="grid-content medium-6 small-12">
+        <!-- Lastname -->
+        <input ng-model="registrationForm.last_name" type="text" placeholder="Efternavn">
+        <!-- /lastname -->
       </div>
-  </div>
-  <!-- /name -->
+    </div>
+    <!-- /name -->
 
-  <!-- Contact information -->
-  <div class="grid-content">
-    <label><strong>Kontakt information</strong></label>
-  </div>
+    <!-- Contact information -->
+    <div class="grid-block">
+      <div class="grid-content medium-12">
+        <label><strong>Kontakt information</strong>
+            <input ng-model="registrationForm.email" type="text" placeholder="E-mail fx. johndoe@gmail.com">
+        </label>
+      </div>
+    </div>
+    <!-- /contact information -->
+
+    <div class="grid-block">
+      <div class="grid-content">
+        <label><strong>Password</strong></label>
+      </div>
+    </div>
+    <div class="grid-block">
+      <div class="grid-content medium-6 small-12">
+          <!-- Password -->
+          <input ng-model="registrationForm.password" type="password" placeholder="Password">
+          <!-- /password -->
+      </div>
+      <div class="grid-content medium-6 small-12">
+        <!-- Password confirmation -->
+        <input ng-model="registrationForm.password_confirmation" type="password" placeholder="Gentag password">
+        <!-- /password confirmation -->
+      </div>
+    </div>
+  </form>
+
+  <hr/>
+
+  <!-- Registration button -->
   <div class="grid-block">
-    <div class="grid-content medium-6 small-12">
-      <input type="text" placeholder="E-mail fx. johndoe@gmail.com">
-    </div>
-    <div class="grid-content medium-6 small-12">
-      <input type="text" placeholder="Telefon fx. 42819703">
+    <div class="grid-content">
+      <a ng-click="registrateUser(registrationForm)" class="success button expand"><strong>Registrer</strong></a>
     </div>
   </div>
-  <!-- /contact information -->
+  <!-- /registration button -->
 
-  <div class="grid-block padding-top">
-    <!-- Password -->
-    <div class="grid-content medium-6 small-12">
-      <label><strong>Password</strong></label>
-        <input type="text" placeholder="Password">
-        <input type="text" placeholder="Gentag password">
-    </div>
-    <!-- /password -->
-
-    <!-- Maecen or creative -->
-    <div class="grid-content medium-6 small-12">
-      <label><strong>Er du mæcen eller kreativ?</strong></label>
-
-      <!-- Creative -->
-      <a class="button expand"><strong>Kreativ!</strong></a>
-      <!-- /creative -->
-
-      <!-- Maecen -->
-      <a class="button expand"><strong>Maecen!</strong></a>
-      <!-- /maecen -->
-    </div>
-    <!-- /macen or creative -->
-  </div>
-</form>
-<!-- /registration -->
+  <!-- /registration -->
+</div>

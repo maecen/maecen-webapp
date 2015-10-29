@@ -12,12 +12,14 @@
   </head>
   <body>
     <div class="grid-frame vertical">
-      <div class="grid-content shrink no-padding">
-        <ul id="navbar" class="primary dark menu-bar condense">
-          <li><a ui-sref="home"><strong>Mæcen</strong></a></li>
+      <div class="grid-content shrink" style="padding: 0;">
+        <ul class="primary condense menu-bar dark">
+          <li><a ui-sref="registrate"><strong>Mæcen</strong></a></li>
+          <li><a ui-sref="createProject">Opret projekt</a></li>
+          <li><a ui-sref="login">Login</a></li>
         </ul>
       </div>
-      <div ui-view>
+      <div ui-view class="grid-content">
       </div>
     </div>
   </body>

@@ -12,22 +12,32 @@
 
     // custom
     'controllers',
+    'ngResource',
     'services',
     'resources',
     'filters',
-    'hest'
+    'ng-token-auth'
   ])
-    .config(config)
-    .run(run)
-  ;
 
+
+  // Setup authenticantion
+  .config(function($authProvider) {
+    $authProvider.configure({
+        apiUrl: 'http://maecen-staging.herokuapp.com/v1'
+    });
+  })
+  // What's this?...
+    .config(config)
+    .run(run);
+
+  // Setup routing
   config.$inject = ['$urlRouterProvider', '$locationProvider'];
 
   function config($urlProvider, $locationProvider) {
     $urlProvider.otherwise('/');
 
     $locationProvider.html5Mode({
-      enabled:false,
+      enabled: true,
       requireBase: false
     });
 

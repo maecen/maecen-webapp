@@ -47,13 +47,16 @@ var paths = {
     // 3rd-party libs,
     'bower_components/ng-resource/dist/ng-resource.min.js',
     'bower_components/angular-translate/angular-translate.min.js',
+    'bower_components/angular-cookie/angular-cookie.min.js',
+    'bower_components/ng-token-auth/dist/ng-token-auth.min.js',
     // Custom scripts
     'client/assets/js/app.js',
     'client/assets/js/controllers.js',
     'client/assets/js/resources.js',
     'client/assets/js/filters.js',
     'client/assets/js/services.js',
-    'client/assets/js/localization.js'
+    'client/assets/js/localization.js',
+    'client/assets/js/auth.js'
   ]
 }
 

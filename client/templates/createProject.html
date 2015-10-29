@@ -1,0 +1,44 @@
+---
+name: createProject
+url: /createProject
+controller: CreateProjectCtrl
+animationIn: fadeIn
+animationOut: fadeOut
+---
+
+<div class="grid-container">
+
+  <div class="grid-block padding-top">
+    <div class="grid-content">
+
+      <div class="card">
+        <div class="card-divider">
+          <h2 class="text-center">Opret projekt</h2>
+        </div>
+        <div class="card-section">
+
+          <label><strong>Titel</strong>
+            <input ng-model="newProject.project.title" type="text" placeholder="Dodo and the dodos">
+          </label>
+
+          <label><strong>Beskrivelse</strong>
+            <textarea ng-model="newProject.project.description"></textarea>
+          </label>
+
+          <label> <strong>Kategori</strong>
+            <select ng-model="newProject.project.category">
+              <option>Vælg</option>
+              <option value="Musik">Musik</option>
+              <option value="Kunst">Kunst</option>
+              <option value="NGO">NGO</option>
+            </select>
+          </label>
+          <a ng-click="createProject()" class="button success expand"><strong>Opret!</strong></a>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+</div>
