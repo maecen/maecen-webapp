@@ -23,7 +23,8 @@
   // Setup authenticantion
   .config(function($authProvider) {
     $authProvider.configure({
-        apiUrl: 'http://maecen-staging.herokuapp.com/v1'
+        apiUrl: 'http://maecen-staging.herokuapp.com/v1',
+        storage: 'localStorage'
     });
   })
   // What's this?...

@@ -33,7 +33,8 @@ angular.module("ivpusic.cookie",["ipCookie"]),angular.module("ipCookie",["ng"]).
   // Setup authenticantion
   .config(function($authProvider) {
     $authProvider.configure({
-        apiUrl: 'http://maecen-staging.herokuapp.com/v1'
+        apiUrl: 'http://maecen-staging.herokuapp.com/v1',
+        storage: 'localStorage'
     });
   })
   // What's this?...
@@ -105,11 +106,7 @@ angular.module("ivpusic.cookie",["ipCookie"]),angular.module("ipCookie",["ng"]).
       $auth.submitLogin($scope.loginParams)
         .then(function(resp) {
           // handle success response
-          console.log("Login success");
           console.log(resp);
-          var cookie = ipCookie("auth_headers");
-          ipCookie.remove("auth_headers");
-          console.log(ipCookie("auth_headers", cookie, {domain: "maecen-staging.herokuapp.com"}));
         })
         .catch(function(resp) {
           // handle error response
@@ -131,20 +128,21 @@ angular.module("ivpusic.cookie",["ipCookie"]),angular.module("ipCookie",["ng"]).
      };
 
      $scope.createProject = function(){
-       //console.log($scope.newProject);
+       console.log($auth.retrieveData('auth_headers'));
        $http({
          method: 'POST',
          url: 'https://maecen-staging.herokuapp.com/v1/projects',
+         headers: $auth.retrieveData('auth_headers'),
          data: $scope.newProject
        }).then(function successCallback(response) {
            // this callback will be called asynchronously
            // when the response is available
-           console.log("Success!");
+           alert("Success!");
            console.log(response);
          }, function errorCallback(response) {
            // called asynchronously if an error occurs
            // or server returns response with an error status.
-           console.log("Error!");
+           alert("Error!");
            console.log(response);
          });
      };
