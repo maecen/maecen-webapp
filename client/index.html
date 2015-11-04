@@ -11,17 +11,35 @@
     <script src="./assets/js/app.js"></script>
   </head>
   <body>
+
+    <!-- Profile navigation -->
+    <div zf-panel="" id="profile-nav">
+      <a zf-close="" class="close-button">×</a>
+      <ul class="menu-bar vertical">
+        <li>
+          <a ui-sref="profile" ng-show="user.email">{{user.email}}</a>
+          <a ui-sref="login" ng-hide="user.email">Login</a>
+        </li>
+        <li>
+          <a ui-sref="createProject">Create project</a>
+        </li>
+      </ul>
+    </div>
+    <!-- /Profile navigation -->
+
     <div class="grid-frame vertical">
-      <div class="grid-content shrink" style="padding: 0;">
-        <ul class="primary condense menu-bar dark">
-          <li><a ui-sref="registrate"><strong>Mæcen</strong></a></li>
-          <li><a ui-sref="createProject">Opret projekt</a></li>
-          <li><a ui-sref="login">Login</a></li>
-          <li><a>Logget ind som {{ user.email }}</a></li>
+      <div class="grid-content" style="padding: 0;">
+        <!-- Navigation -->
+        <ul class="menu-bar dark primary">
+          <li><a ui-sref="registrate"><strong><i>M</i></strong></a></li>
+          <li><a zf-toggle="profile-nav" href="#"><img zf-iconic="" icon="person" size="small" class="iconic-color-primary"></a></li>
         </ul>
+        <!-- Navigation -->
       </div>
+      <!-- View injection -->
       <div ui-view class="grid-content">
       </div>
+      <!-- /view injection -->
     </div>
   </body>
 </html>
