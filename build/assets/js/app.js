@@ -151,6 +151,30 @@ angular.module("ivpusic.cookie",["ipCookie"]),angular.module("ipCookie",["ng"]).
 
   })
 
+  /*=============================== CREATE PROJECT CONTROLLER =================================*/
+    .controller("ProfileCtrl", function($scope, $auth) {
+      $scope.updateAccount = {
+        first_name: "",
+        last_name: "",
+        email: ""
+      };
+      $scope.submitUpdate = function(){
+        $auth.updateAccount($scope.updateAccount)
+          .then(function(resp) {
+            // handle success response
+            console.log("Succes!");
+            console.log(resp);
+          })
+          .catch(function(resp) {
+            // handle error response
+            console.error(resp);
+          });
+      };
+
+
+    })
+
+
 })();
 
 (function(){

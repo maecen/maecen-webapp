@@ -20,10 +20,10 @@
     <!-- First-/lastname -->
     <div class="grid-block">
       <div class="grid-content small-12 medium-6">
-        <input type="text" placeholder="Fornavn">
+        <input ng-model="updateAccount.first_name" type="text" placeholder="Fornavn">
       </div>
       <div class="grid-content small-12 medium-6">
-        <input type="text" placeholder="Efternavn">
+        <input ng-model="updateAccount.last_name" type="text" placeholder="Efternavn">
       </div>
     </div>
     <!-- /first-/lastname -->
@@ -39,7 +39,7 @@
     <!-- Mail -->
     <div class="grid-block">
       <div class="grid-content">
-        <input type="text" placeholder="E-mail">
+        <input ng-model="updateAccount.email" type="text" placeholder="E-mail">
       </div>
     </div>
     <!-- /mail -->
@@ -63,7 +63,7 @@
 
     <div class="grid-block">
       <div class="grid-content">
-        <a class="button expand success"><strong>Opdater</strong></a>
+        <a ng-click="submitUpdate()" class="button expand success"><strong>Opdater</strong></a>
       </div>
     </div>
 
