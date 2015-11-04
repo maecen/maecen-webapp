@@ -6410,3 +6410,7 @@ blockquote p {
 
 .no-padding {
   padding: 0; }
+
+textarea {
+  resize: none;
+  min-height: 100px; }

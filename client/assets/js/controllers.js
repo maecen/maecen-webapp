@@ -60,7 +60,9 @@
        project: {
          title: "",
          description: "",
-         category: ""
+         category: "",
+         teaser: "",
+         homepage:""
        }
      };
 
@@ -79,7 +81,7 @@
          }, function errorCallback(response) {
            // called asynchronously if an error occurs
            // or server returns response with an error status.
-           alert("Error!");
+           alert(response['data']);
            console.log(response);
          });
      };

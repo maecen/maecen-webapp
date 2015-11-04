@@ -123,7 +123,9 @@ angular.module("ivpusic.cookie",["ipCookie"]),angular.module("ipCookie",["ng"]).
        project: {
          title: "",
          description: "",
-         category: ""
+         category: "",
+         teaser: "",
+         homepage:""
        }
      };
 
@@ -142,7 +144,7 @@ angular.module("ivpusic.cookie",["ipCookie"]),angular.module("ipCookie",["ng"]).
          }, function errorCallback(response) {
            // called asynchronously if an error occurs
            // or server returns response with an error status.
-           alert("Error!");
+           alert(response['data']);
            console.log(response);
          });
      };
