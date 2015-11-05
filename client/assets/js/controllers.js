@@ -7,7 +7,7 @@
   })
 
   /*=============================== REGISTRATION CONTROLLER =================================*/
-  .controller('RegistrationCtrl', function($scope, $auth) {
+  .controller('RegistrationCtrl', function($scope, $auth, $http, Project) {
     $scope.registrationForm = {
       email: "",
       password: "",
@@ -15,6 +15,8 @@
       first_name: "",
       last_name: ""
     };
+
+    $scope.project = Project.get({id:1});
 
     $scope.registrateUser = function(){
       $auth.submitRegistration($scope.registrationForm)
@@ -26,6 +28,7 @@
         .catch(function(resp) {
           // handle error response
           console.log("Error" + resp);
+          alert('error');
         });
     };
 
@@ -55,7 +58,7 @@
   })
 
 /*=============================== CREATE PROJECT CONTROLLER =================================*/
-  .controller("CreateProjectCtrl", function($scope, $auth, $http) {
+  .controller("CreateProjectCtrl", function($scope, $auth, $http, Project) {
      $scope.newProject = {
        project: {
          title: "",
@@ -68,47 +71,28 @@
 
      $scope.createProject = function(){
        console.log($auth.retrieveData('auth_headers'));
-       $http({
-         method: 'POST',
-         url: 'https://maecen-staging.herokuapp.com/v1/projects',
-         headers: $auth.retrieveData('auth_headers'),
-         data: $scope.newProject
-       }).then(function successCallback(response) {
-           // this callback will be called asynchronously
-           // when the response is available
-           alert("Success!");
-           console.log(response);
-         }, function errorCallback(response) {
-           // called asynchronously if an error occurs
-           // or server returns response with an error status.
-           alert(response['data']);
-           console.log(response);
-         });
+
+       var project = new Project($scope.newProject);
+       project.$save();
      };
 
   })
 
-  /*=============================== CREATE PROJECT CONTROLLER =================================*/
-    .controller("ProfileCtrl", function($scope, $auth) {
-      $scope.updateAccount = {
-        first_name: "",
-        last_name: "",
-        email: ""
-      };
+  /*=============================== PROFILE CONTROLLER =================================*/
+    .controller("ProfileCtrl", function($scope, $auth, User) {
       $scope.submitUpdate = function(){
-        $auth.updateAccount($scope.updateAccount)
+        $auth.updateAccount($auth.user)
           .then(function(resp) {
             // handle success response
-            console.log("Succes!");
+            alert("Succes!");
             console.log(resp);
           })
           .catch(function(resp) {
             // handle error response
+            alert("Error!");
             console.error(resp);
           });
       };
-
-
     })
 
 

@@ -45,7 +45,7 @@ var paths = {
   // These files are for your app's JavaScript
   appJS: [
     // 3rd-party libs,
-    'bower_components/ng-resource/dist/ng-resource.min.js',
+    'bower_components/angular-resource/angular-resource.min.js',
     'bower_components/angular-translate/angular-translate.min.js',
     'bower_components/angular-cookie/angular-cookie.min.js',
     'bower_components/ng-token-auth/dist/ng-token-auth.min.js',
