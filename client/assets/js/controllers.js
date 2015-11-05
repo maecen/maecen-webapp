@@ -58,7 +58,7 @@
   })
 
 /*=============================== CREATE PROJECT CONTROLLER =================================*/
-  .controller("CreateProjectCtrl", function($scope, $auth, $http, Project) {
+  .controller("CreateProjectCtrl", function($scope, $auth, $http, $location, Project) {
      $scope.newProject = {
        project: {
          title: "",
@@ -73,23 +73,28 @@
        console.log($auth.retrieveData('auth_headers'));
 
        var project = new Project($scope.newProject);
-       project.$save();
+       project.$save().then(function(resp) {
+         // handle success response
+         $location.path('/projects');
+       })
+       .catch(function(resp) {
+         // handle error response
+         alert("Error!");
+         console.error(resp);
+       });
      };
 
   })
   /*=============================== PROJECTS CONTROLLER =================================*/
 
-  .controller("ProjectsCtrl", function($scope, $auth, $http, Project) {
+  .controller("ProjectsCtrl", function($scope, $stateParams, $auth, $http, Project) {
     $scope.projects = Project.query();
+    console.log($stateParams.id);
+  })
+
+  .controller("MyProjectsCtrl", function($scope, $auth, $http, Project, User) {
+    $scope.userinfo = User.get({id: 15});
     console.log($scope.projects);
-
-    $scope.createProject = function(){
-       console.log($auth.retrieveData('auth_headers'));
-
-       var project = new Project($scope.newProject);
-       project.$save();
-     };
-
   })
 
   /*=============================== PROFILE CONTROLLER =================================*/

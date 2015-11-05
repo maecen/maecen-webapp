@@ -1,11 +1,11 @@
 ---
-name: projects
-url: /projects?user_id
-controller: ProjectsCtrl
+name: myprojects
+url: /myprojects
+controller: MyProjectsCtrl
 ---
 
 <div class="grid-container">
-  <div ng-repeat="project in projects">
+  <div ng-repeat="project in userinfo.projects">
 
     <div class="grid-block padding-top">
       <div class="grid-content">
@@ -22,18 +22,7 @@ controller: ProjectsCtrl
             <label><strong>Teaser</strong>
               {{ project.teaser }}
             </label>
-            <label> <strong>Kreative</strong></label>
-            <div ng-repeat="creative in project.creatives">
-                {{ creative.name }}
-            </div>
-
-            <label> <strong>Mæcener</strong></label>
-            <div ng-repeat="subscriber in project.subscribers">
-                {{ subscriber.name }}
-            </div>
           </div>
-
-
 
         </div>
       </div>
