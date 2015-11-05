@@ -77,6 +77,20 @@
      };
 
   })
+  /*=============================== PROJECTS CONTROLLER =================================*/
+
+  .controller("ProjectsCtrl", function($scope, $auth, $http, Project) {
+    $scope.projects = Project.query();
+    console.log($scope.projects);
+
+    $scope.createProject = function(){
+       console.log($auth.retrieveData('auth_headers'));
+
+       var project = new Project($scope.newProject);
+       project.$save();
+     };
+
+  })
 
   /*=============================== PROFILE CONTROLLER =================================*/
     .controller("ProfileCtrl", function($scope, $auth, User) {
