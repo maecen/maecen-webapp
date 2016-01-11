@@ -4,8 +4,39 @@ url: /projects?user_id
 controller: ProjectsCtrl
 ---
 
+
 <div class="grid-container">
-  <div ng-repeat="project in projects">
+
+  <div class="grid-block">
+    <div class="grid-content">
+      <section class="block-list">
+        <header>Dine mæcengrupper</header>
+        <ul>
+          <li ng-repeat="project in projects" class="with-chevron">
+            <a href="#">{{project.title}}</a>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+</div>
+
+
+  <!--
+  <div class="grid-block padding-top">
+    <div class="grid-content">
+      <section class="block-list">
+        <header>Dine mæcengrupper</header>
+        <ul>
+          <li ng-repeat="project in projects" class="with-chevron">
+            <a href="#">{{project.title}}</a>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div> -->
+  <!-- <div ng-repeat="project in projects">
 
     <div class="grid-block padding-top">
       <div class="grid-content">
@@ -38,5 +69,4 @@ controller: ProjectsCtrl
         </div>
       </div>
     </div>
-  </div>
-</div>
+  </div> -->

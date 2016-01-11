@@ -1,5 +1,5 @@
 (function(){
-  angular.module("controllers", ["services", "resources", "ipCookie"])
+  angular.module("controllers", ["services", "resources"])
 
   /*=============================== HOME CONTROLLER =================================*/
   .controller('HomeCtrl', function($scope) {
@@ -35,7 +35,7 @@
   })
 
 /*=============================== LOGIN CONTROLLER =================================*/
-  .controller('LoginCtrl', function($scope, $auth, ipCookie) {
+  .controller('LoginCtrl', function($scope, $auth) {
 
     $scope.loginParams = {
       email: "",
@@ -90,11 +90,6 @@
   .controller("ProjectsCtrl", function($scope, $stateParams, $auth, $http, Project) {
     $scope.projects = Project.query();
     console.log($stateParams.id);
-  })
-
-  .controller("MyProjectsCtrl", function($scope, $auth, $http, Project, User) {
-    $scope.userinfo = User.get({id: 15});
-    console.log($scope.projects);
   })
 
   /*=============================== PROFILE CONTROLLER =================================*/
