@@ -16,24 +16,16 @@ controller: CreateProjectCtrl
         <div class="card-section">
           <form novalidate>
 
-            <div class="grid-block">
-              <!-- Title -->
-              <div class="grid-content">
-                <label><strong>Titel</strong>
-                  <input ng-model="newProject.project.title" type="text" placeholder="Dodo and the dodos">
-                </label>
-              </div>
-              <!-- /title -->
+            <label><strong>Titel</strong>
+              <input ng-model="newProject.project.title" type="text" placeholder="Dodo and the dodos">
+            </label>
+            
             <!-- Logo -->
-            <div class="grid-content">
-              <label><strong>Logo</strong>
-                <input id="logo_upload" type="file" onchange="angular.element(this).scope().logoChanged()" >
-              </label>
-            </div>
+            <label><strong>Projekt logo</strong>
+              <input id="logo_upload" type="file" onchange="angular.element(this).scope().logoChanged()" >
+            </label>
             <!-- /Logo -->
-            </div>
 
-            <br/>
 
             <label> <strong>Kategori</strong>
               <select ng-model="newProject.project.category" required>
