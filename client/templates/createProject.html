@@ -40,10 +40,15 @@ controller: CreateProjectCtrl
             </label>
 
             <!-- Project image -->
-            <input id="cover_image_upload" type="file" onchange="angular.element(this).scope().fileNameChanged()" required >
+            <label><strong>Cover billede</strong>
+              <input id="cover_image_upload" type="file" onchange="angular.element(this).scope().fileNameChanged()" required >
+            </label>
             <!-- /project image -->
 
           </form>
+
+          <br/>
+
           <a ng-click="createProject()" class="button success expand"><strong>Opret projekt</strong></a>
         </div>
       </div>
