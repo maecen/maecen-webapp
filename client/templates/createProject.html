@@ -15,6 +15,26 @@ controller: CreateProjectCtrl
         </div>
         <div class="card-section">
           <form novalidate>
+
+            <div class="grid-block">
+              <!-- Title -->
+              <div class="grid-content">
+                <label><strong>Titel</strong>
+                  <input ng-model="newProject.project.title" type="text" placeholder="Dodo and the dodos">
+                </label>
+              </div>
+              <!-- /title -->
+            <!-- Logo -->
+            <div class="grid-content">
+              <label><strong>Logo</strong>
+                <input id="logo_upload" type="file" onchange="angular.element(this).scope().logoChanged()" >
+              </label>
+            </div>
+            <!-- /Logo -->
+            </div>
+
+            <br/>
+
             <label> <strong>Kategori</strong>
               <select ng-model="newProject.project.category" required>
                 <option>Vælg</option>
@@ -22,9 +42,6 @@ controller: CreateProjectCtrl
                 <option value="Kunst">Kunst</option>
                 <option value="NGO">NGO</option>
               </select>
-            </label>
-            <label><strong>Titel</strong>
-              <input ng-model="newProject.project.title" type="text" placeholder="Dodo and the dodos">
             </label>
 
             <label><strong>Teaser</strong>
@@ -42,7 +59,7 @@ controller: CreateProjectCtrl
             <!-- Project image -->
             <label><strong>Cover billede</strong>
               <br/>
-              <input id="cover_image_upload" type="file" onchange="angular.element(this).scope().fileNameChanged()" required >
+              <input id="cover_image_upload" type="file" onchange="angular.element(this).scope().coverImageChanged()" >
             </label>
             <!-- /project image -->
 

@@ -107,7 +107,7 @@ g=g+this.KEY_STR.charAt(d)+this.KEY_STR.charAt(e)+this.KEY_STR.charAt(f)+this.KE
   })
 
 /*=============================== LOGIN CONTROLLER =================================*/
-  .controller('LoginCtrl', function($scope, $auth) {
+  .controller('LoginCtrl', function($scope, $auth, FoundationApi) {
 
     $scope.loginParams = {
       email: "",
@@ -130,7 +130,7 @@ g=g+this.KEY_STR.charAt(d)+this.KEY_STR.charAt(e)+this.KEY_STR.charAt(f)+this.KE
   })
 
 /*=============================== CREATE PROJECT CONTROLLER =================================*/
-  .controller("CreateProjectCtrl", function($scope, $auth, $http, $location, Project) {
+  .controller("CreateProjectCtrl", function($scope, $auth, $http, $location, Project, FoundationApi) {
      $scope.newProject = {
        project: {
          title: "",
@@ -138,17 +138,29 @@ g=g+this.KEY_STR.charAt(d)+this.KEY_STR.charAt(e)+this.KEY_STR.charAt(f)+this.KE
          category: "",
          teaser: "",
          homepage: "",
-         cover_image: ""
+         cover_image: "",
+         logo: ""
        }
      };
 
      // Filthy fileupload logic...
-     $scope.fileNameChanged = function(){
+     $scope.coverImageChanged = function(){
        console.log("Called it!");
        var file = document.getElementById('cover_image_upload').files[0];
        fileReader = new FileReader();
        fileReader.onloadend = function(){
          $scope.newProject.project.cover_image = fileReader.result;
+       }
+       fileReader.readAsDataURL(file);
+     };
+
+     $scope.logoChanged = function(){
+       console.log("Logo input changed");
+       var file = document.getElementById('logo_upload').files[0];
+       fileReader = new FileReader();
+       fileReader.onloadend = function(){
+         $scope.newProject.project.logo = fileReader.result;
+          console.log("Loaded dat logo!");
        }
        fileReader.readAsDataURL(file);
      };
@@ -161,29 +173,24 @@ g=g+this.KEY_STR.charAt(d)+this.KEY_STR.charAt(e)+this.KEY_STR.charAt(f)+this.KE
        project.$save().then(function(resp) {
          // handle success response
          console.log(resp);
-
-         // Update the project with selected cover image
-
-         // Redirect to project overview
-         //$location.path('/projects');
        })
        .catch(function(resp) {
          // handle error response
-         alert("Error!");
-         FoundationApi.publish('error-notifications', { title: 'Fejl!', content: resp.data.errors });
+         console.log(resp);
+         //FoundationApi.publish('error-notifications', { title: 'Fejl!', content: resp.data.errors });
        });
      };
 
   })
   /*=============================== PROJECTS CONTROLLER =================================*/
 
-  .controller("ProjectsCtrl", function($scope, $stateParams, $auth, $http, Project) {
+  .controller("ProjectsCtrl", function($scope, $stateParams, $auth, $http, Project, FoundationApi) {
     $scope.projects = Project.query();
     console.log($stateParams.id);
   })
 
   /*=============================== PROFILE CONTROLLER =================================*/
-    .controller("ProfileCtrl", function($scope, $auth, User) {
+    .controller("ProfileCtrl", function($scope, $auth, User, FoundationApi) {
       $scope.submitUpdate = function(){
         $auth.updateAccount($auth.user)
           .then(function(resp) {
