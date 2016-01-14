@@ -1,5 +1,5 @@
 (function(){
-  angular.module("controllers", ["services", "resources"])
+  angular.module("controllers", ["services", "resources", "foundation.core", "ngFileUpload"])
 
   /*=============================== HOME CONTROLLER =================================*/
   .controller('HomeCtrl', function($scope) {
@@ -7,7 +7,7 @@
   })
 
   /*=============================== REGISTRATION CONTROLLER =================================*/
-  .controller('RegistrationCtrl', function($scope, $auth, $http, Project) {
+  .controller('RegistrationCtrl', function($scope, $auth, Project, FoundationApi) {
     $scope.registrationForm = {
       email: "",
       password: "",
@@ -16,19 +16,17 @@
       last_name: ""
     };
 
-    $scope.project = Project.get({id:1});
-
     $scope.registrateUser = function(){
       $auth.submitRegistration($scope.registrationForm)
         .then(function(resp) {
           // handle success response
           console.log("Success!" + resp);
-          alert("Du er nu registreret!");
         })
         .catch(function(resp) {
-          // handle error response
-          console.log("Error" + resp);
-          alert('error');
+          // handle error
+          $scope.formErrors = resp.data.errors
+          console.error(resp);
+          FoundationApi.publish('error-notifications', { title: 'Fejl!', content: resp.data.errors });
         });
     };
 
@@ -51,7 +49,7 @@
         .catch(function(resp) {
           // handle error response
           console.log("Login error!");
-          console.log(resp);
+          FoundationApi.publish('error-notifications', { title: 'Fejl!', content: resp.data.errors });
         });
     };
 
@@ -65,22 +63,40 @@
          description: "",
          category: "",
          teaser: "",
-         homepage:""
+         homepage: "",
+         cover_image: ""
        }
      };
 
+     // Filthy fileupload logic...
+     $scope.fileNameChanged = function(){
+       console.log("Called it!");
+       var file = document.getElementById('cover_image_upload').files[0];
+       fileReader = new FileReader();
+       fileReader.onloadend = function(){
+         $scope.newProject.project.cover_image = fileReader.result;
+       }
+       fileReader.readAsDataURL(file);
+     };
+
      $scope.createProject = function(){
-       console.log($auth.retrieveData('auth_headers'));
+       console.log($scope.newProject.project.cover_image);
+       //console.log($auth.retrieveData('auth_headers'));
 
        var project = new Project($scope.newProject);
        project.$save().then(function(resp) {
          // handle success response
-         $location.path('/projects');
+         console.log(resp);
+
+         // Update the project with selected cover image
+
+         // Redirect to project overview
+         //$location.path('/projects');
        })
        .catch(function(resp) {
          // handle error response
          alert("Error!");
-         console.error(resp);
+         FoundationApi.publish('error-notifications', { title: 'Fejl!', content: resp.data.errors });
        });
      };
 

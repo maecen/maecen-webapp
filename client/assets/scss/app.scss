@@ -19,7 +19,14 @@
 //========================================= NAVBAR ===============================
 #navbar {
 }
-//========================================= HOME PAGE ===============================
+//========================================= REGISTRATION PAGE ==========================
+.css-form input.ng-invalid.ng-touched {
+   background-color: $alert-color;
+ }
+
+ .css-form input.ng-valid.ng-touched {
+   background-color: $success-color;
+ }
 
 //========================================= PROJECT PAGE ===============================
 textarea{

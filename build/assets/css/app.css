@@ -6349,6 +6349,12 @@ blockquote p {
 .no-padding {
   padding: 0; }
 
+.css-form input.ng-invalid.ng-touched {
+  background-color: #EA0028; }
+
+.css-form input.ng-valid.ng-touched {
+  background-color: #51D331; }
+
 textarea {
   resize: none;
   min-height: 100px; }

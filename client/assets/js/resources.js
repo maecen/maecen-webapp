@@ -5,7 +5,7 @@
   angular.module("resources", ["ngResource"])
   // Users
   .factory("User", function($resource) {
-    return $resource(baseUrl+urlVersion+"users/:id",{ id: "@id"});
+    return $resource(baseUrl+urlVersion+"users/:id", { id: "@id"});
   })
   // Projects
   .factory("Project", function($resource) {

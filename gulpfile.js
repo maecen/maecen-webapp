@@ -49,6 +49,7 @@ var paths = {
     'bower_components/angular-translate/angular-translate.min.js',
     'bower_components/angular-cookie/angular-cookie.min.js',
     'bower_components/ng-token-auth/dist/ng-token-auth.min.js',
+    'bower_components/ng-file-upload/ng-file-upload.min.js',
     // Custom scripts
     'client/assets/js/app.js',
     'client/assets/js/controllers.js',
