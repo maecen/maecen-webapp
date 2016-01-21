@@ -6349,6 +6349,10 @@ blockquote p {
 .no-padding {
   padding: 0; }
 
+#language-picker {
+  padding-left: 1rem;
+  padding-right: 1rem; }
+
 .css-form input.ng-invalid.ng-touched {
   background-color: #EA0028; }
 

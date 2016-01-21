@@ -13,7 +13,7 @@
   <body>
 
     <!-- Profile navigation -->
-    <div zf-panel="" id="profile-nav" ng-controller="SlideInCtrl">
+    <div zf-panel="" id="profile-nav">
       <a zf-close="" class="close-button">×</a>
       <ul class="menu-bar vertical">
 
@@ -37,11 +37,21 @@
         <!-- /projects -->
 
         <!-- Pick language -->
-        <li>
-          <select>
+        <div ng-controller="SlideInCtrl">
+          <li>
+          <label id="language-picker">
+            <strong>{{'SelectLanguage' | translate}}</strong>
+            <span class="inline-label">
+              <select ng-model="selectedLang">
+                <option value="da"> DA </option>
+                <option value="eng"> ENG </option>
+              </select>
 
-          <
-        </li>
+              <a href="#" ng-click="setLanguage()" class="button">Pick</a>
+            </span>
+          </label>
+          </li>
+        </div>
         <!-- /pick language -->
 
       </ul>
