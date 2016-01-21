@@ -6,6 +6,19 @@ controller: ProfileCtrl
 
 <div class="grid-container">
 
+  <!-- Toggle edit mode -->
+  <section class="block-list">
+    <ul>
+      <li>
+        <span>Fastlås profil</span>
+        <div class="switch small">
+          <input ng-model="readOnly" type="checkbox" id="editMode-switch">
+          <label for="editMode-switch"></label>
+        </div>
+      </li>
+    </ul>
+  </section>
+  <!-- /toggle edit mode -->
 
   <!-- Logged in as -->
   <div class="grid-block">
@@ -87,23 +100,8 @@ controller: ProfileCtrl
       </div>
     </div>
 
-
-
   </form>
-  <!-- Toggle edit mode -->
-  <label> Rediger profil
-    <div class="switch small">
-      <input ng-model="readOnly" type="checkbox" id="editMode-switch">
-      <label for="editMode-switch"></label>
-    </div>
-  </label>
-  <!-- /toggle edit mode -->
 
-  <div class="grid-block">
-    <div class="grid-content">
-      <hr/>
-    </div>
-  </div>
-
+  <a class="button alert expand hollow" ng-click="signOut()">Log ud</a>
 
 </div>

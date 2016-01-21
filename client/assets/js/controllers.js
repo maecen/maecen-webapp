@@ -116,20 +116,34 @@
   })
 
   /*=============================== PROFILE CONTROLLER =================================*/
-    .controller("ProfileCtrl", function($scope, $auth, User, FoundationApi) {
+    .controller("ProfileCtrl", function($scope, $auth, User, FoundationApi, $location) {
 
       $scope.readOnly = true;
+
+      $scope.signOut = function(){
+        $auth.signOut()
+          .then(function(resp) {
+            // handle success response
+            FoundationApi.publish('success-notifications', { title: 'Success!', content: 'Du er nu logget ud', color: "success", autoclose: 1500 });
+            console.log(resp);
+            $location.url("/");
+          })
+          .catch(function(resp) {
+            // handle error response
+            console.log(resp);
+          });
+      };
 
       $scope.submitUpdate = function(){
         $auth.updateAccount($auth.user)
           .then(function(resp) {
             // handle success response
-            alert("Succes!");
+            FoundationApi.publish('success-notifications', { title: 'Success!', content: 'Din profil er nu opdateret', color: "success", autoclose: 1500 });
             console.log(resp);
           })
           .catch(function(resp) {
             // handle error response
-            alert("Error!");
+            FoundationApi.publish('error-notifications', { title: 'Fejl', content: resp.data, color: "alert", autoclose: 1500 });
             console.error(resp);
           });
       };
