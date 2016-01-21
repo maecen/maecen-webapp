@@ -16,6 +16,7 @@
     'services',
     'resources',
     'filters',
+    'localization',
     'ng-token-auth'
   ])
 

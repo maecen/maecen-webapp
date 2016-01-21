@@ -1,9 +1,9 @@
 (function(){
   angular.module("controllers", ["services", "resources", "foundation.core"])
 
-  /*=============================== HOME CONTROLLER =================================*/
-  .controller('HomeCtrl', function($scope) {
-
+  /*=============================== SLIDEIN CONTROLLER =====================================*/
+  .controller("SlideInCtrl", function(){
+    
   })
 
   /*=============================== REGISTRATION CONTROLLER =================================*/
