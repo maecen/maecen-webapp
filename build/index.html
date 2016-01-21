@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mæcen</title>
+    <title>{{'AppTitle' | translate}}</title>
     <link href="./assets/css/app.css" rel="stylesheet" type="text/css">
     <script src="./assets/js/foundation.js"></script>
     <script src="./assets/js/templates.js"></script>
@@ -13,29 +13,47 @@
   <body>
 
     <!-- Profile navigation -->
-    <div zf-panel="" id="profile-nav">
+    <div zf-panel="" id="profile-nav" ng-controller="SlideInCtrl">
       <a zf-close="" class="close-button">×</a>
       <ul class="menu-bar vertical">
+
+        <!-- Profile -->
         <li>
           <a ui-sref="profile" ng-show="user.email">{{user.email}}</a>
           <a ui-sref="login" ng-hide="user.email">Login</a>
         </li>
+        <!-- /profile -->
+
+        <!-- Create project -->
         <li>
-          <a ui-sref="createProject">Create project</a>
+          <a ui-sref="createProject">{{'MenuNewProject' | translate}}</a>
         </li>
+        <!-- /Create project -->
+
+        <!-- Projects -->
         <li>
-          <a ui-sref="projects">All projects</a>
+          <a ui-sref="projects">{{'MenuProjects' | translate}}</a>
         </li>
+        <!-- /projects -->
+
+        <!-- Pick language -->
+        <li>
+          <select>
+
+          <
+        </li>
+        <!-- /pick language -->
+
       </ul>
     </div>
     <!-- /Profile navigation -->
 
     <!-- Error notifcations -->
-    <zf-notification-set id="error-notifications" position="top-left"></zf-notification-set>
+    <zf-notification-set id="error-notifications" position="top-right"></zf-notification-set>
     <!-- /error notifications -->
 
     <!-- Success notifications -->
-    <zf-notification-set id="success-notifications" position="top-left"></zf-notification-set>
+    <zf-notification-set id="success-notifications" position="top-right"></zf-notification-set>
     <!-- /success notifications -->
 
     <div class="grid-frame vertical">

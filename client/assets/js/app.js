@@ -4,7 +4,6 @@
   angular.module('application', [
     'ui.router',
     'ngAnimate',
-
     //foundation
     'foundation',
     'foundation.dynamicRouting',
@@ -16,6 +15,7 @@
     'services',
     'resources',
     'filters',
+    'localization',
     'ng-token-auth'
   ])
 

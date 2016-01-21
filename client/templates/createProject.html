@@ -11,23 +11,23 @@ controller: CreateProjectCtrl
 
       <div class="card">
         <div class="card-divider">
-          <h2 class="text-center">Opret projekt</h2>
+          <h2 class="text-center">{{'CreateProjectTitel' | translate}}</h2>
         </div>
         <div class="card-section">
           <form novalidate>
 
-            <label><strong>Titel</strong>
+            <label><strong>{{'NewProjectTitel' | translate}}</strong>
               <input ng-model="newProject.project.title" type="text" placeholder="Dodo and the dodos">
             </label>
-            
+
             <!-- Logo -->
-            <label><strong>Projekt logo</strong>
+            <label><strong>{{'ProjectLogo' | translate}}</strong>
               <input id="logo_upload" type="file" onchange="angular.element(this).scope().logoChanged()" >
             </label>
             <!-- /Logo -->
 
 
-            <label> <strong>Kategori</strong>
+            <label> <strong>{{'ProjectCategory' | translate}}</strong>
               <select ng-model="newProject.project.category" required>
                 <option>Vælg</option>
                 <option value="Musik">Musik</option>
@@ -36,20 +36,20 @@ controller: CreateProjectCtrl
               </select>
             </label>
 
-            <label><strong>Teaser</strong>
-              <input ng-model="newProject.project.teaser" type="text" placeholder="Max 140 karakterer...">
+            <label><strong>{{'ProjectTeaser' | translate}}</strong>
+              <input ng-model="newProject.project.teaser" type="text" placeholder="{{'MaxTeaserChars' | translate}}">
             </label>
 
-            <label><strong>Beskrivelse</strong>
+            <label><strong>{{'ProjectDescription' | translate}}</strong>
               <textarea ng-model="newProject.project.description"></textarea>
             </label>
 
-            <label><strong>URL</strong>
+            <label><strong>{{'ProjectUrl' | translate}}</strong>
               <input ng-model="newProject.project.homepage" type="text" placeholder="http://dodos.do/">
             </label>
 
             <!-- Project image -->
-            <label><strong>Cover billede</strong>
+            <label><strong>{{'Cover' | translate}}</strong>
               <br/>
               <input id="cover_image_upload" type="file" onchange="angular.element(this).scope().coverImageChanged()" >
             </label>
@@ -59,7 +59,7 @@ controller: CreateProjectCtrl
 
           <br/>
 
-          <a ng-click="createProject()" class="button success expand"><strong>Opret projekt</strong></a>
+          <a ng-click="createProject()" class="button success expand"><strong>{{'CreateProjectBTN' | translate}}</strong></a>
         </div>
       </div>
 
