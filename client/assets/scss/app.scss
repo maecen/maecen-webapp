@@ -1,0 +1,35 @@
+@import "settings";
+@import "foundation";
+
+
+//========================================= GENERAL RULES ==========================
+.padding {
+  padding: 1rem;
+}
+.padding-bottom {
+  padding-bottom: 1.2rem;
+}
+.padding-top {
+  padding-top: 1.2rem;
+}
+.no-padding {
+  padding: 0;
+}
+
+//========================================= NAVBAR ===============================
+#navbar {
+}
+//========================================= REGISTRATION PAGE ==========================
+.css-form input.ng-invalid.ng-touched {
+   background-color: $alert-color;
+ }
+
+ .css-form input.ng-valid.ng-touched {
+   background-color: $success-color;
+ }
+
+//========================================= PROJECT PAGE ===============================
+textarea{
+  resize: none;
+  min-height: 100px;
+}

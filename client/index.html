@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" ng-app="application">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mæcen</title>
+    <link href="./assets/css/app.css" rel="stylesheet" type="text/css">
+    <script src="./assets/js/foundation.js"></script>
+    <script src="./assets/js/templates.js"></script>
+    <script src="./assets/js/routes.js"></script>
+    <script src="./assets/js/app.js"></script>
+  </head>
+  <body>
+
+    <!-- Profile navigation -->
+    <div zf-panel="" id="profile-nav">
+      <a zf-close="" class="close-button">×</a>
+      <ul class="menu-bar vertical">
+        <li>
+          <a ui-sref="profile" ng-show="user.email">{{user.email}}</a>
+          <a ui-sref="login" ng-hide="user.email">Login</a>
+        </li>
+        <li>
+          <a ui-sref="createProject">Create project</a>
+        </li>
+        <li>
+          <a ui-sref="projects">All projects</a>
+        </li>
+      </ul>
+    </div>
+    <!-- /Profile navigation -->
+
+    <!-- Error notifcations -->
+    <zf-notification-set color="warning" id="error-notifications" position="top-left"></zf-notification-set>
+    <!-- /error notifications -->
+
+    <!-- Success notifications -->
+
+    <!-- /success notifications -->
+
+    <div class="grid-frame vertical">
+      <div class="grid-content" style="padding: 0;">
+        <!-- Navigation -->
+        <ul class="menu-bar dark primary">
+          <li><a ui-sref="registrate" href="#"><strong>Logo</strong></a></li>
+          <li><a zf-toggle="profile-nav" href="#">Profile</a></li>
+        </ul>
+        <!-- Navigation -->
+      </div>
+      <!-- View injection -->
+      <div ui-view class="grid-content">
+      </div>
+      <!-- /view injection -->
+    </div>
+  </body>
+</html>

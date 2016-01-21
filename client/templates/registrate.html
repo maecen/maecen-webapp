@@ -1,0 +1,69 @@
+---
+name: registrate
+url: /
+controller: RegistrationCtrl
+---
+
+<div class="grid-container">
+  <form novalidate>
+
+    <!-- Name -->
+    <div class="grid-block">
+      <div class="grid-content">
+        <label><strong>Navn og efternavn</strong></label>
+      </div>
+    </div>
+    <div class="grid-block">
+      <div class="grid-content medium-6 small-12">
+        <!-- Firstname --->
+        <input ng-model="registrationForm.first_name" type="text" placeholder="Fornavn">
+        <!-- /firstname -->
+      </div>
+      <div class="grid-content medium-6 small-12">
+        <!-- Lastname -->
+        <input ng-model="registrationForm.last_name" type="text" placeholder="Efternavn">
+        <!-- /lastname -->
+      </div>
+    </div>
+    <!-- /name -->
+
+    <!-- Contact information -->
+    <div class="grid-block">
+      <div class="grid-content medium-12">
+        <label><strong>Kontakt information</strong>
+            <input ng-model="registrationForm.email" type="email" placeholder="E-mail fx. johndoe@gmail.com">
+        </label>
+      </div>
+    </div>
+    <!-- /contact information -->
+
+    <div class="grid-block">
+      <div class="grid-content">
+        <label><strong>Password</strong></label>
+      </div>
+    </div>
+    <div class="grid-block">
+      <div class="grid-content medium-6 small-12">
+          <!-- Password -->
+          <input ng-model="registrationForm.password" type="password" placeholder="Password" >
+          <!-- /password -->
+      </div>
+      <div class="grid-content medium-6 small-12">
+        <!-- Password confirmation -->
+        <input ng-model="registrationForm.password_confirmation" type="password" placeholder="Gentag password" >
+        <!-- /password confirmation -->
+      </div>
+    </div>
+  </form>
+
+  <hr/>
+
+  <!-- Registration button -->
+  <div class="grid-block">
+    <div class="grid-content">
+      <a ng-click="registrateUser(registrationForm)" class="success button expand"><strong>Registrer</strong></a>
+    </div>
+  </div>
+  <!-- /registration button -->
+
+</div>
