@@ -3,7 +3,7 @@
 
   angular.module('application', [
     'ui.router',
-    'ngAnimate',
+    //'ngAnimate',
 
     //foundation
     'foundation',

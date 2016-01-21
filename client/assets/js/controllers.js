@@ -118,7 +118,15 @@
   /*=============================== PROFILE CONTROLLER =================================*/
     .controller("ProfileCtrl", function($scope, $auth, User, FoundationApi, $location) {
 
-      $scope.readOnly = true;
+      $scope.editing = false;
+
+      $scope.enableEditing = function(){
+        $scope.editing = true;
+      }
+
+      $scope.disableEditing = function(){
+        $scope.editing = false;
+      }
 
       $scope.signOut = function(){
         $auth.signOut()
@@ -139,6 +147,7 @@
           .then(function(resp) {
             // handle success response
             FoundationApi.publish('success-notifications', { title: 'Success!', content: 'Din profil er nu opdateret', color: "success", autoclose: 1500 });
+            $scope.editing = false;
             console.log(resp);
           })
           .catch(function(resp) {

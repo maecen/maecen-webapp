@@ -5,21 +5,6 @@ controller: ProfileCtrl
 ---
 
 <div class="grid-container">
-
-  <!-- Toggle edit mode -->
-  <section class="block-list">
-    <ul>
-      <li>
-        <span>Fastlås profil</span>
-        <div class="switch small">
-          <input ng-model="readOnly" type="checkbox" id="editMode-switch">
-          <label for="editMode-switch"></label>
-        </div>
-      </li>
-    </ul>
-  </section>
-  <!-- /toggle edit mode -->
-
   <!-- Logged in as -->
   <div class="grid-block">
     <div class="grid-content">
@@ -40,11 +25,11 @@ controller: ProfileCtrl
     <div class="grid-block">
       <div class="grid-content small-12 medium-6">
         <span class="label">Fornavn</span>
-        <input ng-model="user.first_name" ng-readonly="readOnly == true" type="text" placeholder="Fornavn">
+        <input ng-model="user.first_name" ng-readonly="editing != true" type="text" placeholder="Fornavn">
       </div>
       <div class="grid-content small-12 medium-6">
         <span class="label">Efternavn</span>
-        <input ng-model="user.last_name" ng-readonly="readOnly == true" type="text" placeholder="Efternavn">
+        <input ng-model="user.last_name" ng-readonly="editing == false" type="text" placeholder="Efternavn">
       </div>
     </div>
     <!-- /first-/lastname -->
@@ -53,7 +38,7 @@ controller: ProfileCtrl
     <div class="grid-block">
       <div class="grid-content">
         <span class="label">Email</span>
-        <input ng-model="user.email" ng-readonly="readOnly == true" type="text" placeholder="Email">
+        <input ng-model="user.email" ng-readonly="editing == false" type="text" placeholder="Email">
       </div>
     </div>
     <!-- /mail -->
@@ -64,11 +49,11 @@ controller: ProfileCtrl
     <div class="grid-block">
       <div class="grid-content medium-6 small-6">
         <span class="label">Alias</span>
-        <input ng-model="user.nickname" ng-readonly="readOnly == true" type="text" placeholder="Alias">
+        <input ng-model="user.nickname" ng-readonly="editing == false" type="text" placeholder="Alias">
       </div>
       <div class="grid-content medium-6 small-6">
         <span class="label">Telefonnummer</span>
-        <input ng-model="user.phone_number" ng-readonly="readOnly == true" type="text" placeholder="Telefonnummer">
+        <input ng-model="user.phone_number" ng-readonly="editing == false" type="text" placeholder="Telefonnummer">
       </div>
     </div>
     <!-- /alias -->
@@ -77,11 +62,11 @@ controller: ProfileCtrl
     <div class="grid-block">
       <div class="grid-content medium-6 small-6">
         <span class="label">Land</span>
-        <input ng-model="user.country" ng-readonly="readOnly == true" type="text" placeholder="Land">
+        <input ng-model="user.country" ng-readonly="editing == false" type="text" placeholder="Land">
       </div>
       <div class="grid-content medium-6 small-6">
        <span class="label">Postnummer</span>
-          <input ng-model="user.zip_code" ng-readonly="readOnly == true" type="text" placeholder="Postnummer">
+          <input ng-model="user.zip_code" ng-readonly="editing == false" type="text" placeholder="Postnummer">
       </div>
     </div>
     <!-- /country and zip -->
@@ -89,19 +74,38 @@ controller: ProfileCtrl
     <div class="grid-block">
       <div class="grid-content">
         <select ng-model="user.account_type">
-          <option ng-disabled="readOnly == true" value="normal">Mæcen</option>
-          <option ng-disabled="readOnly == true" value="creative">Kreativ</option>
+          <option ng-disabled="editing == false" value="normal">Mæcen</option>
+          <option ng-disabled="editing == false" value="creative">Kreativ</option>
         </select>
-
-        <a ng-click="submitUpdate()" class="button expand success fadeIn" ng-hide="readOnly == true">
-          <strong>Opdater</strong>
-        </a>
-
       </div>
     </div>
 
   </form>
 
-  <a class="button alert expand hollow" ng-click="signOut()">Log ud</a>
+  <!-- Editing -->
+  <div class="grid-block" ng-show = "editing == true">
+    <div class="grid-content medium-6 small-12">
+      <a class="button alert expand" ng-click="disableEditing()">Annuller</a>
+    </div>
+    <div class="grid-content medium-6 small-12">
+      <a class="button success expand"  ng-click="submitUpdate()">Opdater</a>
+    </div>
+  </div>
+
+  <!-- Country and zip -->
+  <div class="grid-block">
+    <div class="grid-content small-12">
+      <a class="button success expand" ng-show="editing == false" ng-click="enableEditing()">Rediger profil</a>
+    </div>
+    <div class="grid-content small-12">
+     <a class="button alert expand hollow" ng-click="signOut()">Log ud</a>
+    </div>
+  </div>
+
+
+
+  <!-- Editing -->
+
+
 
 </div>
