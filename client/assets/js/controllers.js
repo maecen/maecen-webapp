@@ -2,8 +2,17 @@
   angular.module("controllers", ["services", "resources", "foundation.core"])
 
   /*=============================== SLIDEIN CONTROLLER =====================================*/
+<<<<<<< HEAD
   .controller("SlideInCtrl", function(){
     
+=======
+  .controller("SlideInCtrl", function($scope, $translate){
+    $scope.selectedLang = "da";
+    $scope.setLanguage = function(){
+      console.log($scope.selectedLang);
+      $translate.use($scope.selectedLang);
+    };
+>>>>>>> 7a371a8e47655351ad564cf9e638f949dd0eb888
   })
 
   /*=============================== REGISTRATION CONTROLLER =================================*/

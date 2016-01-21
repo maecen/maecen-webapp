@@ -5,7 +5,6 @@
     'ui.router',
     //'ngAnimate',
 
-    //foundation
     'foundation',
     'foundation.dynamicRouting',
     'foundation.dynamicRouting.animations',

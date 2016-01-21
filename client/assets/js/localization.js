@@ -7,6 +7,27 @@ angular.module("localization", ["pascalprecht.translate"])
   /*======================================= DANISH TRANSLATION ==============*/
   $translateProvider.translations('da', {
     AppTitle: "Mæcen",
+<<<<<<< HEAD
+=======
+
+    /*======= Slidein menu ========*/
+    MenuProjects: "Alle projekter",
+    MenuNewProject: "Nyt projekt",
+    SelectLanguage: "Vælg sprog",
+    LangDa: "Dansk",
+    LangEng: "Engelsk",
+    /*======= /slidein menu ========*/
+
+    /*======= Registration ========*/
+    NameAndSurname: "Navn og efternavn",
+    ContactInfo: "Kontakt information",
+    FirstName: "Fornavn",
+    LastName: "Efternavn",
+    MailExample: "johndoe@gmail.com",
+    Passwrd: "Adgangskode",
+    ConfirmPasswrd: "Bekræft adgangskode",
+    RegistrateBTN: "Registrer",
+>>>>>>> 7a371a8e47655351ad564cf9e638f949dd0eb888
     /*======= Registration ========*/
     NameAndSurname: "Navn og efternavn",
     ContactInfo: "Kontakt information",
@@ -37,8 +58,31 @@ angular.module("localization", ["pascalprecht.translate"])
     CreateProjectBTN: "Opret projekt"
     /*======== /create projects ======*/
 
+    /*======= Projects ============*/
+    MaecenGroups: "Mæcen grupper",
+    /*======= /projects ============*/
+
+    /*======== Create projects ======*/
+    CreateProjectTitel: "Opret projekt",
+    NewProjectTitel: "Titel",
+    ProjectLogo: "Logo",
+    ProjectCategory: "Kategori",
+    ProjectTeaser: "Teaser",
+    MaxTeaserChars: "Max 140 karaktere",
+    ProjectDescription: "Beskrivelse",
+    ProjectUrl: "URL",
+    ProjectCover: "Cover",
+    CreateProjectBTN: "Opret projekt"
+    /*======== /create projects ======*/
+
   });
 
+  /*======================================= English TRANSLATION ==============*/
+  $translateProvider.translations('eng', {
+
+  });
+
+<<<<<<< HEAD
   /*======================================= English TRANSLATION ==============*/
   $translateProvider.translations('eng', {
     AppTitle: "Maecen",
@@ -73,6 +117,8 @@ angular.module("localization", ["pascalprecht.translate"])
     /*======== /create projects ======*/
   });
 
+=======
+>>>>>>> 7a371a8e47655351ad564cf9e638f949dd0eb888
 
 })
 

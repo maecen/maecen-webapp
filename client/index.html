@@ -25,6 +25,7 @@
         <!-- /profile -->
 
         <!-- Create project -->
+<<<<<<< HEAD
         <li>
           <a ui-sref="createProject">{{'MenuNewProject' | translate}}</a>
         </li>
@@ -42,6 +43,35 @@
 
           <
         </li>
+=======
+        <li>
+          <a ui-sref="createProject">{{'MenuNewProject' | translate}}</a>
+        </li>
+        <!-- /Create project -->
+
+        <!-- Projects -->
+        <li>
+          <a ui-sref="projects">{{'MenuProjects' | translate}}</a>
+        </li>
+        <!-- /projects -->
+
+        <!-- Pick language -->
+        <div ng-controller="SlideInCtrl">
+          <li>
+          <label id="language-picker">
+            <strong>{{'SelectLanguage' | translate}}</strong>
+            <span class="inline-label">
+              <select ng-model="selectedLang">
+                <option value="da"> DA </option>
+                <option value="eng"> ENG </option>
+              </select>
+
+              <a href="#" ng-click="setLanguage()" class="button">Pick</a>
+            </span>
+          </label>
+          </li>
+        </div>
+>>>>>>> 7a371a8e47655351ad564cf9e638f949dd0eb888
         <!-- /pick language -->
 
       </ul>
