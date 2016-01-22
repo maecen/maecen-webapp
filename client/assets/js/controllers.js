@@ -4,7 +4,7 @@
   /*=============================== SLIDEIN CONTROLLER =====================================*/
   .controller("SlideInCtrl", function($scope, $translate){
     $scope.selectedLang = "da";
-    
+
     $scope.setLanguage = function(){
       console.log($scope.selectedLang);
       $translate.use($scope.selectedLang);
@@ -31,7 +31,7 @@
           // handle error
           $scope.formErrors = resp.data.errors
           console.error(resp);
-          FoundationApi.publish('error-notifications', { title: 'Fejl!', content: resp.data.errors });
+          FoundationApi.publish('error-notifications', { title: 'Fejl!', content: resp.data.errors.full_messages });
         });
     };
 
@@ -54,7 +54,7 @@
         .catch(function(resp) {
           // handle error response
           console.log("Login error!");
-          FoundationApi.publish('error-notifications', { title: 'Fejl!', content: resp.data.errors });
+          FoundationApi.publish('error-notifications', { title: 'Fejl!', content: resp.data.errors.full_messages });
         });
     };
 
@@ -157,7 +157,7 @@
           })
           .catch(function(resp) {
             // handle error response
-            FoundationApi.publish('error-notifications', { title: 'Fejl', content: resp.data, color: "alert", autoclose: 1500 });
+            FoundationApi.publish('error-notifications', { title: 'Fejl', content: resp.data.errors.full_messages.join(", "), color: "alert", autoclose: 1500 });
             console.error(resp);
           });
       };
