@@ -7,8 +7,6 @@ angular.module("localization", ["pascalprecht.translate"])
   /*======================================= DANISH TRANSLATION ==============*/
   $translateProvider.translations('da', {
     AppTitle: "Mæcen",
-<<<<<<< HEAD
-=======
 
     /*======= Slidein menu ========*/
     MenuProjects: "Alle projekter",
@@ -27,7 +25,7 @@ angular.module("localization", ["pascalprecht.translate"])
     Passwrd: "Adgangskode",
     ConfirmPasswrd: "Bekræft adgangskode",
     RegistrateBTN: "Registrer",
->>>>>>> 7a371a8e47655351ad564cf9e638f949dd0eb888
+
     /*======= Registration ========*/
     NameAndSurname: "Navn og efternavn",
     ContactInfo: "Kontakt information",
@@ -55,7 +53,7 @@ angular.module("localization", ["pascalprecht.translate"])
     ProjectDescription: "Beskrivelse",
     ProjectUrl: "URL",
     ProjectCover: "Cover",
-    CreateProjectBTN: "Opret projekt"
+    CreateProjectBTN: "Opret projekt",
     /*======== /create projects ======*/
 
     /*======= Projects ============*/
@@ -82,7 +80,6 @@ angular.module("localization", ["pascalprecht.translate"])
 
   });
 
-<<<<<<< HEAD
   /*======================================= English TRANSLATION ==============*/
   $translateProvider.translations('eng', {
     AppTitle: "Maecen",
@@ -116,10 +113,6 @@ angular.module("localization", ["pascalprecht.translate"])
     CreateProjectBTN: "Create project"
     /*======== /create projects ======*/
   });
-
-=======
->>>>>>> 7a371a8e47655351ad564cf9e638f949dd0eb888
-
 })
 
 })();

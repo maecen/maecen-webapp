@@ -178,7 +178,7 @@ gulp.task('build', function(cb) {
 gulp.task('deploy', ['build'], function() {
   bb.deploy({
     access_token: config.BB_ACCESS_TOKEN,
-    site_id: "012536f2-ae7c-4c0a-baa9-7a7b52df1ed5",
+    site_id: config.BB_SITE_ID,
     dir: "build"
   }, function(err, deploy) {
     if (err) { throw(err) }
