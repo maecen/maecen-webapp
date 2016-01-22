@@ -7,7 +7,9 @@
 
 var $        = require('gulp-load-plugins')();
 var argv     = require('yargs').argv;
+var config   = require('./config');
 var gulp     = require('gulp');
+var bb       = require('bitballoon');
 var rimraf   = require('rimraf');
 var router   = require('front-router');
 var sequence = require('run-sequence');
@@ -163,7 +165,7 @@ gulp.task('server', ['build'], function() {
       host: '0.0.0.0',
       fallback: 'index.html',
       livereload: true,
-      open: true
+      open: 'http://localhost:8079'
     }))
   ;
 });
@@ -171,6 +173,16 @@ gulp.task('server', ['build'], function() {
 // Builds your entire app once, without starting a server
 gulp.task('build', function(cb) {
   sequence('clean', ['copy', 'copy:foundation', 'sass', 'uglify'], 'copy:templates', cb);
+});
+
+gulp.task('deploy', ['build'], function() {
+  bb.deploy({
+    access_token: config.BB_ACCESS_TOKEN,
+    site_id: "012536f2-ae7c-4c0a-baa9-7a7b52df1ed5",
+    dir: "build"
+  }, function(err, deploy) {
+    if (err) { throw(err) }
+  });
 });
 
 // Default task: builds your app, starts a server, and recompiles assets when they change
