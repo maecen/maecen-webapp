@@ -129,18 +129,15 @@
       });
 
       $scope.editing = false;
-
-      $scope.$on('auth:validation-success', function(ev) {
-        $scope.copyUser = angular.copy($scope.user);
-        console.log($scope.copyUser);
-      });
+      $scope.userCopy = "";
 
       $scope.enableEditing = function(){
+        $scope.userCopy = angular.copy($scope.user);
         $scope.editing = true;
       };
 
       $scope.disableEditing = function(){
-        $scope.user = angular.copy($scope.copyUser, $scope.user);
+        $scope.user = angular.copy($scope.userCopy, $scope.user);
         $scope.editing = false;
       };
 
