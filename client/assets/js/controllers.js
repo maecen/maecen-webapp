@@ -5,9 +5,9 @@
   .controller("SlideInCtrl", function($scope, $translate){
     $scope.selectedLang = "da";
 
-    $scope.setLanguage = function(){
+    $scope.setLanguage = function(language){
       console.log($scope.selectedLang);
-      $translate.use($scope.selectedLang);
+      $translate.use(language);
     };
   })
 
@@ -121,7 +121,12 @@
   })
 
   /*=============================== PROFILE CONTROLLER =================================*/
-    .controller("ProfileCtrl", function($scope, $auth, User, FoundationApi, $location) {
+    .controller("ProfileCtrl", function($scope, $auth, User, FoundationApi, $location, $translate) {
+      $scope.selectedLanguage = $translate.preferredLanguage();
+
+      $scope.$watch('selectedLanguage', function(){
+        $translate.use($scope.selectedLanguage);
+      });
 
       $scope.editing = false;
 

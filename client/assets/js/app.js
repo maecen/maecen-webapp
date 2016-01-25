@@ -15,16 +15,15 @@
     'services',
     'resources',
     'filters',
-    'localization',
-    'ng-token-auth'
+    'ng-token-auth',
+    'pascalprecht.translate'
   ])
-
 
   // Setup authenticantion
   .config(function($authProvider) {
     $authProvider.configure({
-        apiUrl: 'https://maecen-staging.herokuapp.com/v1',
-        //apiUrl: 'http://localhost:3000/v1',
+        //apiUrl: 'https://maecen-staging.herokuapp.com/v1',
+        apiUrl: 'http://localhost:3000/v1',
         storage: 'localStorage'
     });
   })

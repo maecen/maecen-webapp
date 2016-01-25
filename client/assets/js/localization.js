@@ -1,5 +1,5 @@
 (function(){
-angular.module("localization", ["pascalprecht.translate"])
+angular.module("application")
 .config(function ($translateProvider) {
   // Set default (preffered) language
   $translateProvider.preferredLanguage('da');
@@ -22,8 +22,8 @@ angular.module("localization", ["pascalprecht.translate"])
     FirstName: "Fornavn",
     LastName: "Efternavn",
     MailExample: "johndoe@gmail.com",
-    Passwrd: "Adgangskode",
-    ConfirmPasswrd: "Bekræft adgangskode",
+    Password: "Adgangskode",
+    ConfirmPassword: "Bekræft adgangskode",
     RegistrateBTN: "Registrer",
 
     /*======= Registration ========*/
@@ -32,8 +32,8 @@ angular.module("localization", ["pascalprecht.translate"])
     FirstName: "Fornavn",
     LastName: "Efternavn",
     MailExample: "johndoe@gmail.com",
-    Passwrd: "Adgangskode",
-    ConfirmPasswrd: "Bekræft adgangskode",
+    Password: "Adgangskode",
+    ConfirmPassword: "Bekræft adgangskode",
     RegistrateBTN: "Registrer",
     /*======= Registration ========*/
 
@@ -76,21 +76,21 @@ angular.module("localization", ["pascalprecht.translate"])
   });
 
   /*======================================= English TRANSLATION ==============*/
-  $translateProvider.translations('eng', {
+  $translateProvider.translations('en', {
 
   });
 
   /*======================================= English TRANSLATION ==============*/
-  $translateProvider.translations('eng', {
+  $translateProvider.translations('en', {
     AppTitle: "Maecen",
     /*======= Registration ========*/
-    NameAndSurname: "First and lastname",
+    NameAndSurname: "First and last name",
     ContactInfo: "Contact information",
-    FirstName: "Firstname",
-    LastName: "Lastname",
+    FirstName: "First name",
+    LastName: "Last name",
     MailExample: "johndoe@gmail.com",
-    Passwrd: "Password",
-    ConfirmPasswrd: "Confirm password",
+    Password: "Password",
+    ConfirmPassword: "Confirm password",
     RegistrateBTN: "Registrate",
     /*======= Registration ========*/
 
@@ -113,6 +113,9 @@ angular.module("localization", ["pascalprecht.translate"])
     CreateProjectBTN: "Create project"
     /*======== /create projects ======*/
   });
+})
+.run(function($http, $translate) {
+  $http.defaults.headers.common.locale = function(){ return $translate.use(); };
 })
 
 })();
