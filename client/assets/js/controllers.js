@@ -31,7 +31,7 @@
           // handle error
           $scope.formErrors = resp.data.errors
           console.error(resp);
-          FoundationApi.publish('error-notifications', { title: 'Fejl!', content: resp.data.errors.full_messages });
+          FoundationApi.publish('error-notifications', {content: resp.data.errors.full_messages });
         });
     };
 
@@ -54,7 +54,7 @@
         .catch(function(resp) {
           // handle error response
           console.log("Login error!");
-          FoundationApi.publish('error-notifications', { title: 'Fejl!', content: resp.data.errors.full_messages });
+          FoundationApi.publish('error-notifications', {content: resp.data.errors.full_messages });
         });
     };
 
@@ -145,7 +145,7 @@
         $auth.signOut()
           .then(function(resp) {
             // handle success response
-            FoundationApi.publish('success-notifications', { title: 'Success!', content: 'Du er nu logget ud', color: "success", autoclose: 1500 });
+            FoundationApi.publish('success-notifications', {content: 'Du er nu logget ud', color: "success", autoclose: 1500 });
             console.log(resp);
             $location.url("/");
           })
@@ -159,13 +159,13 @@
         $auth.updateAccount($auth.user)
           .then(function(resp) {
             // handle success response
-            FoundationApi.publish('success-notifications', { title: 'Success!', content: 'Din profil er nu opdateret', color: "success", autoclose: 1500 });
+            FoundationApi.publish('success-notifications', {content: 'Din profil er nu opdateret', color: "success", autoclose: 1500 });
             $scope.editing = false;
             console.log(resp);
           })
           .catch(function(resp) {
             // handle error response
-            FoundationApi.publish('error-notifications', { title: 'Fejl', content: resp.data.errors.full_messages.join(", "), color: "alert", autoclose: 1500 });
+            FoundationApi.publish('error-notifications', {content: resp.data.errors.full_messages.join(", "), color: "alert", autoclose: 1500 });
             console.error(resp);
           });
       };

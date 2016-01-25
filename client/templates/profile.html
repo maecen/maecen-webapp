@@ -33,12 +33,12 @@ controller: ProfileCtrl
     <!-- First-/lastname -->
     <div class="grid-block">
       <div class="grid-content small-12 medium-6">
-        <span class="label">Fornavn</span>
-        <input ng-model="user.first_name" ng-readonly="editing != true" type="text" placeholder="Fornavn">
+        <span class="label">{{'FirstName' | translate}}</span>
+        <input ng-model="user.first_name" ng-readonly="editing != true" type="text" placeholder="{{'FirstName' | translate}}">
       </div>
       <div class="grid-content small-12 medium-6">
-        <span class="label">Efternavn</span>
-        <input ng-model="user.last_name" ng-readonly="editing == false" type="text" placeholder="Efternavn">
+        <span class="label">{{'LastName' | translate}}</span>
+        <input ng-model="user.last_name" ng-readonly="editing == false" type="text" placeholder="{{'LastName' | translate}}">
       </div>
     </div>
     <!-- /first-/lastname -->
@@ -61,8 +61,8 @@ controller: ProfileCtrl
         <input ng-model="user.nickname" ng-readonly="editing == false" type="text" placeholder="Alias">
       </div>
       <div class="grid-content medium-6 small-6">
-        <span class="label">Telefonnummer</span>
-        <input ng-model="user.phone_number" ng-readonly="editing == false" type="text" placeholder="Telefonnummer">
+        <span class="label">{{'PhoneNumber' | translate}}</span>
+        <input ng-model="user.phone_number" ng-readonly="editing == false" type="text" placeholder="{{'PhoneNumber' | translate}}">
       </div>
     </div>
     <!-- /alias -->
@@ -70,12 +70,12 @@ controller: ProfileCtrl
     <!-- Country and zip -->
     <div class="grid-block">
       <div class="grid-content medium-6 small-6">
-        <span class="label">Land</span>
-        <input ng-model="user.country" ng-readonly="editing == false" type="text" placeholder="Land">
+        <span class="label">{{'Country' | translate}}</span>
+        <input ng-model="user.country" ng-readonly="editing == false" type="text" placeholder="{{'Country' | translate}}">
       </div>
       <div class="grid-content medium-6 small-6">
-       <span class="label">Postnummer</span>
-          <input ng-model="user.zip_code" ng-readonly="editing == false" type="text" placeholder="Postnummer">
+       <span class="label">{{'ZipCode' | translate}}</span>
+          <input ng-model="user.zip_code" ng-readonly="editing == false" type="text" placeholder="{{'ZipCode' | translate}}">
       </div>
     </div>
     <!-- /country and zip -->
@@ -104,10 +104,10 @@ controller: ProfileCtrl
   <!-- Country and zip -->
   <div class="grid-block">
     <div class="grid-content small-12">
-      <a class="button success expand" ng-show="editing == false" ng-click="enableEditing()">Rediger profil</a>
+      <a class="button success expand" ng-show="editing == false" ng-click="enableEditing()">{{'EditButton' | translate}}</a>
     </div>
     <div class="grid-content small-12">
-     <a class="button alert expand hollow" ng-click="signOut()">Log ud</a>
+     <a class="button alert expand hollow" ng-click="signOut()">{{'SignOut' | translate}}</a>
     </div>
   </div>
 

@@ -16,7 +16,7 @@ angular.module("application")
     LangEng: "Engelsk",
     /*======= /slidein menu ========*/
 
-    /*======= Registration ========*/
+    /*======= User Info ========*/
     NameAndSurname: "Navn og efternavn",
     ContactInfo: "Kontakt information",
     FirstName: "Fornavn",
@@ -24,18 +24,15 @@ angular.module("application")
     MailExample: "johndoe@gmail.com",
     Password: "Adgangskode",
     ConfirmPassword: "Bekræft adgangskode",
-    RegistrateBTN: "Registrer",
+    Country: "Land",
+    PhoneNumber: "Telefonnummer",
+    ZipCode: "Postnummer",
 
-    /*======= Registration ========*/
-    NameAndSurname: "Navn og efternavn",
-    ContactInfo: "Kontakt information",
-    FirstName: "Fornavn",
-    LastName: "Efternavn",
-    MailExample: "johndoe@gmail.com",
-    Password: "Adgangskode",
-    ConfirmPassword: "Bekræft adgangskode",
+    /*======= Profile ========*/
     RegistrateBTN: "Registrer",
-    /*======= Registration ========*/
+    EditButton: "Rediger profil",
+    SignIn: "Log in",
+    SignOut: "Log ud",
 
     /*======= Projects ============*/
     MenuProjects: "Alle projekter",
@@ -91,8 +88,16 @@ angular.module("application")
     MailExample: "johndoe@gmail.com",
     Password: "Password",
     ConfirmPassword: "Confirm password",
-    RegistrateBTN: "Registrate",
+    Country: "Country",
+    PhoneNumber: "Phone number",
+    ZipCode: "Zip code",
     /*======= Registration ========*/
+
+    /*======= Profile ========*/
+    RegistrateBTN: "Registrate",
+    EditButton: "Edit profile",
+    SignIn: "Sign in",
+    SignOut: "Sign out",
 
     /*======= Projects ============*/
     MenuProjects: "All projects",
