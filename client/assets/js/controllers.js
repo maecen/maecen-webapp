@@ -130,13 +130,19 @@
 
       $scope.editing = false;
 
+      $scope.$on('auth:validation-success', function(ev) {
+        $scope.copyUser = angular.copy($scope.user);
+        console.log($scope.copyUser);
+      });
+
       $scope.enableEditing = function(){
         $scope.editing = true;
-      }
+      };
 
       $scope.disableEditing = function(){
+        $scope.user = angular.copy($scope.copyUser, $scope.user);
         $scope.editing = false;
-      }
+      };
 
       $scope.signOut = function(){
         $auth.signOut()
