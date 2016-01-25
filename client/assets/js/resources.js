@@ -1,6 +1,6 @@
 (function(){
-  //var baseUrl = "https://maecen-staging.herokuapp.com/"
-  var baseUrl = "http://localhost:3000/"
+  var baseUrl = "https://maecen-staging.herokuapp.com/"
+  //var baseUrl = "http://localhost:3000/"
   var urlVersion = "v1/"
   angular.module("resources", ["ngResource"])
   // Users
