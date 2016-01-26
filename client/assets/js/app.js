@@ -23,7 +23,6 @@
 
   // Setup authenticantion
   .config(function($authProvider, apiUrl) {
-    console.log(apiUrl);
     $authProvider.configure({
         apiUrl: apiUrl,
         storage: 'localStorage'

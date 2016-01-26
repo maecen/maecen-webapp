@@ -32,6 +32,8 @@ angular.module("application")
     /*======= Profile ========*/
     RegistrateBTN: "Registrer",
     EditButton: "Rediger profil",
+    UpdateButton: "Opdater",
+    CancelButton: "Annuller",
     SignIn: "Log in",
     SignOut: "Log ud",
 
@@ -99,6 +101,8 @@ angular.module("application")
     EditButton: "Edit profile",
     SignIn: "Sign in",
     SignOut: "Sign out",
+    UpdateButton: "Update",
+    CancelButton: "Cancel",
 
     /*======= Projects ============*/
     MenuProjects: "All projects",
