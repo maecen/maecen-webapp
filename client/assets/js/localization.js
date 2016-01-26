@@ -30,7 +30,7 @@ angular.module("application")
     ZipCode: "Postnummer",
 
     /*======= Profile ========*/
-    RegistrateBTN: "Registrer",
+    Register: "Registrer",
     EditButton: "Rediger profil",
     UpdateButton: "Opdater",
     CancelButton: "Annuller",
@@ -97,7 +97,7 @@ angular.module("application")
     /*======= Registration ========*/
 
     /*======= Profile ========*/
-    RegistrateBTN: "Registrate",
+    Register: "Register",
     EditButton: "Edit profile",
     SignIn: "Sign in",
     SignOut: "Sign out",
