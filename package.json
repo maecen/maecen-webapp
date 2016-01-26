@@ -5,11 +5,13 @@
     "start": "gulp"
   },
   "devDependencies": {
+    "add-stream": "1.0.0",
     "bitballoon": "0.2.2",
     "front-router": "^1.0.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^2.3.1",
     "gulp-concat": "^2.6.0",
+    "gulp-ng-config": "1.2.1",
     "gulp-if": "^1.2.5",
     "gulp-load-plugins": "1.0.0-rc.1",
     "gulp-ng-html2js": "^0.2.0",

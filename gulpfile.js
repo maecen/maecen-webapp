@@ -5,17 +5,20 @@
 // 1. LIBRARIES
 // - - - - - - - - - - - - - - -
 
-var $        = require('gulp-load-plugins')();
-var argv     = require('yargs').argv;
-var config   = require('./config');
-var gulp     = require('gulp');
-var bb       = require('bitballoon');
-var rimraf   = require('rimraf');
-var router   = require('front-router');
-var sequence = require('run-sequence');
+var $         = require('gulp-load-plugins')();
+var argv      = require('yargs').argv;
+var config    = require('./config');
+var gulp      = require('gulp');
+var bb        = require('bitballoon');
+var rimraf    = require('rimraf');
+var addStream = require('add-stream');
+var router    = require('front-router');
+var sequence  = require('run-sequence');
+var gulpNgConfig = require('gulp-ng-config');
 
 // Check for --production flag
 var isProduction = !!(argv.production);
+var isLocal = !!(argv.local);
 
 // 2. FILE PATHS
 // - - - - - - - - - - - - - - -
@@ -144,6 +147,14 @@ gulp.task('uglify:foundation', function(cb) {
   ;
 });
 
+function makeConfig() {
+  return gulp.src('envs.json')
+  .pipe(gulpNgConfig('application.config', {
+      environment: (isLocal ? 'local' : 'production')
+    })
+  );
+}
+
 gulp.task('uglify:app', function() {
   var uglify = $.if(isProduction, $.uglify()
     .on('error', function (e) {
@@ -152,6 +163,7 @@ gulp.task('uglify:app', function() {
 
   return gulp.src(paths.appJS)
     .pipe(uglify)
+    .pipe(addStream.obj(makeConfig()))
     .pipe($.concat('app.js'))
     .pipe(gulp.dest('./build/assets/js/'))
   ;

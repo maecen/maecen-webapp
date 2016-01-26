@@ -2,6 +2,7 @@
   'use strict';
 
   angular.module('application', [
+    'application.config',
     'ui.router',
     //'ngAnimate',
 
@@ -20,16 +21,16 @@
   ])
 
   // Setup authenticantion
-  .config(function($authProvider) {
+  .config(function($authProvider, apiUrl) {
+    console.log(apiUrl);
     $authProvider.configure({
-        apiUrl: 'https://maecen-staging.herokuapp.com/v1',
-        //apiUrl: 'http://localhost:3000/v1',
+        apiUrl: apiUrl,
         storage: 'localStorage'
     });
   })
   // What's this?...
-    .config(config)
-    .run(run);
+  .config(config)
+  .run(run);
 
   // Setup routing
   config.$inject = ['$urlRouterProvider', '$locationProvider'];
