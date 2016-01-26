@@ -122,10 +122,11 @@
 
   /*=============================== PROFILE CONTROLLER =================================*/
     .controller("ProfileCtrl", function($scope, $auth, User, FoundationApi, $location, $translate) {
-      $scope.selectedLanguage = $translate.preferredLanguage();
+      $scope.selectedLanguage = $translate.use();
 
       $scope.$watch('selectedLanguage', function(){
         $translate.use($scope.selectedLanguage);
+        window.localStorage['locale'] = $scope.selectedLanguage;
       });
 
       $scope.editing = false;

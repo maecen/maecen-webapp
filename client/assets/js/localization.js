@@ -2,7 +2,8 @@
 angular.module("application")
 .config(function ($translateProvider) {
   // Set default (preffered) language
-  $translateProvider.preferredLanguage('da');
+  var language = window.localStorage['locale'] || 'en';
+  $translateProvider.preferredLanguage(language);
 
   /*======================================= DANISH TRANSLATION ==============*/
   $translateProvider.translations('da', {

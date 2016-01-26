@@ -17,7 +17,8 @@
     'resources',
     'filters',
     'ng-token-auth',
-    'pascalprecht.translate'
+    'pascalprecht.translate',
+    'ipCookie'
   ])
 
   // Setup authenticantion
