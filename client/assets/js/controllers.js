@@ -38,26 +38,21 @@
   })
 
 /*=============================== LOGIN CONTROLLER =================================*/
-  .controller('LoginCtrl', function($scope, $auth, FoundationApi) {
+  .controller('LoginCtrl', function($scope, $auth, $location, FoundationApi) {
 
     $scope.loginParams = {
       email: "",
       password: ""
     };
 
-    $scope.login = function(){
-      $auth.submitLogin($scope.loginParams)
-        .then(function(resp) {
-          // handle success response
-          console.log(resp);
-        })
-        .catch(function(resp) {
-          // handle error response
-          console.log("Login error!");
-          FoundationApi.publish('error-notifications', {content: resp.data.errors.full_messages });
-        });
-    };
+    $scope.$on('auth:login-error', function(context, response) {
+      FoundationApi.publish('error-notifications', {content: response.errors[0], color: 'alert', autoclose: 1500 });
+    });
 
+    $scope.$on('auth:login-success', function(context, response) {
+      FoundationApi.publish('error-notifications', {content: 'Success!', autoclose: 1500 });
+      $location.path('/');
+    });
   })
 
 /*=============================== CREATE PROJECT CONTROLLER =================================*/
