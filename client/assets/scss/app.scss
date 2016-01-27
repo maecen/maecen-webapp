@@ -38,3 +38,17 @@ textarea{
   resize: none;
   min-height: 100px;
 }
+
+.sprite {
+  display: none;
+}
+
+html{
+  font-size: 80%;
+}
+
+@media (min-width: 500px) {
+  html{
+    font-size: 100%;
+  }
+}

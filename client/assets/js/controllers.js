@@ -11,6 +11,11 @@
     };
   })
 
+  /*=============================== SLIDEIN CONTROLLER =====================================*/
+  .controller("HomeCtrl", function($scope){
+
+  })
+
   /*=============================== REGISTRATION CONTROLLER =================================*/
   .controller('RegistrationCtrl', function($scope, $auth, Project, FoundationApi) {
     $scope.registrationForm = {
