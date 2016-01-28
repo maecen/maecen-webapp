@@ -14,7 +14,7 @@
     </head>
     <body>
         <!-- Mobile navigation -->
-        <div zf-panel="" id="mobile-slide-in" ng-controller="SlideInCtrl">
+        <div zf-panel="" id="mobile-slide-in" ng-controller="SlideInCtrl" zf-close="mobile-slide-in">
             <ul class="menu-bar vertical" id="mobile-slide-in-nav">
                 <!-- Login/profile -->
                 <li>
@@ -59,7 +59,7 @@
                 </ul>
             </div>
             <!-- Navigation -->
-            <div zf-close="mobile-slide-in" class="grid-frame vertical">
+            <div class="grid-frame vertical">
                 <!-- View injection -->
                 <div ui-view class="grid-content">
                 </div>
