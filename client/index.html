@@ -14,8 +14,11 @@
     </head>
     <body>
         <!-- Mobile navigation -->
-        <div zf-panel="" id="mobile-slide-in" ng-controller="SlideInCtrl" zf-close="mobile-slide-in">
+        <div zf-panel="" id="mobile-slide-in" ng-controller="SlideInCtrl">
             <ul class="menu-bar vertical" id="mobile-slide-in-nav">
+                <li>
+                    <a zf-close="">close</a>
+                </li>
                 <!-- Login/profile -->
                 <li>
                     <a ui-sref="profile" ng-show="user.first_name">
@@ -28,7 +31,7 @@
 
                 <!-- Create project -->
                 <li>
-                    <a ui-sref="createProject">{{'MenuNewProject' | translate}}</a>
+                    <a ui-sref="createProject" class="is-active">{{'MenuNewProject' | translate}}</a>
                 </li>
                 <!-- /Create project -->
 
