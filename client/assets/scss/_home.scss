@@ -1,10 +1,18 @@
 .home {
+  .background-image{
+    background: url('../img/bg-image.png');
+    background-size: cover;
+  }
+
   .maecen-logo {
-    fill: red;
+    margin-top: 3rem;
+    fill: white;
   }
 
   h4 {
-    margin-top: 3rem;
+    margin: 3rem 0 3rem;
+    font-size: 1.3rem;
+    color: white;
     font-family: 'Merriweather Sans', sans-serif;
     font-weight: bold;
     font-style: italic;
@@ -13,6 +21,9 @@
 
   .maecenates-bar{
     background-color: #E4E5EB;
-    height: 4rem;
+
+    .button{
+      margin: 1rem auto 1rem;
+    }
   }
 }

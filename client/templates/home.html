@@ -3,12 +3,17 @@ name: home
 url: /
 controller: HomeCtrl
 ---
-<div class="grid-container">
-  <div class="grid-block">
-    <div class="grid-content">
-      <svg>
-         <use xlink:href="#gas" />
+<div class="home">
+  <div class="grid-block small-12 background-image">
+    <div class="grid-content text-center margin-top">
+      <svg class="maecen-logo">
+         <use xlink:href="#logo" />
       </svg>
+
+      <h4>“A person who supports art and science financially”</h4>
     </div>
+  </div>
+  <div class="grid-block small-12 text-center maecenates-bar">
+    <button ui-sref="projects" class="button">See all Maecenates</button>
   </div>
 </div>

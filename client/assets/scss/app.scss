@@ -1,6 +1,8 @@
 @import "settings";
 @import "foundation";
 @import "mobile-nav";
+@import "home";
+
 
 //========================================= GENERAL RULES ==========================
 .padding {
@@ -16,6 +18,32 @@
   padding: 0;
 }
 
+.margin {
+  margin: 1rem;
+}
+.margin-bottom {
+  margin-bottom: 1.2rem;
+}
+.margin-top {
+  margin-top: 1.2rem;
+}
+.no-padding {
+  margin: 0;
+}
+
+.button{
+  text-transform: uppercase;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+}
+
+//========================================= NAVBAR ===============================
+#navbar {
+}
+//========================================= SLIDE IN NAV ==============================
+#mobile {
+}
 //========================================= REGISTRATION PAGE ==========================
 .css-form input.ng-invalid.ng-touched {
    background-color: $alert-color;
