@@ -18,6 +18,8 @@ $deep-purple: #09122C;
 }
 
 #mobile-slide-in {
+  padding: 0rem;
+  margin: 0rem;
   @extend %panel-base;
   // Use the style mixin to define visual styles
   @include panel-style(
@@ -27,8 +29,8 @@ $deep-purple: #09122C;
 }
 
 #mobile-slide-in-nav {
-  padding: 0px;
-  margin: 0px;
+  padding: 0rem;
+  margin: 0rem;
   @extend %menu-bar;
   @include menu-bar-layout(
           $orientation: vertical, // Can be horizontal or vertical

@@ -1,70 +1,70 @@
 <!doctype html>
 <html lang="en" ng-app="application">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{'AppTitle' | translate}}</title>
-    <link href="./assets/css/app.css" rel="stylesheet" type="text/css">
-    <script src="./assets/js/foundation.js"></script>
-    <script src="./assets/js/templates.js"></script>
-    <script src="./assets/js/routes.js"></script>
-    <script src="./assets/js/app.js"></script>
-  </head>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{{'AppTitle' | translate}}</title>
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Merriweather+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link href="./assets/css/app.css" rel="stylesheet" type="text/css">
+        <script src="./assets/js/foundation.js"></script>
+        <script src="./assets/js/templates.js"></script>
+        <script src="./assets/js/routes.js"></script>
+        <script src="./assets/js/app.js"></script>
+    </head>
     <body>
-          <!-- Mobile navigation -->
-          <div zf-panel="" id="mobile-slide-in" ng-controller="SlideInCtrl">
+        <!-- Mobile navigation -->
+        <div zf-panel="" id="mobile-slide-in" ng-controller="SlideInCtrl">
             <ul class="menu-bar vertical" id="mobile-slide-in-nav">
+                <!-- Login/profile -->
+                <li>
+                    <a ui-sref="profile" ng-show="user.first_name">
+                        <div id="placeholder_profile_img"></div>
+                        <span id="profile-bar">{{user.first_name}}</span>
+                    </a>
+                    <a ui-sref="login" ng-hide="user.first_name">Login</a>
+                </li>
+                <!-- /Login/profile -->
 
-              <!-- Login/profile -->
-              <li>
-                <a ui-sref="profile" ng-show="user.first_name">
-                    <div id="placeholder_profile_img"></div>
-                    <span id="profile-bar">{{user.first_name}}</span>
-                </a>
-                <a ui-sref="login" ng-hide="user.first_name">Login</a>
-              </li>
-              <!-- /Login/profile -->
+                <!-- Create project -->
+                <li>
+                    <a ui-sref="createProject">{{'MenuNewProject' | translate}}</a>
+                </li>
+                <!-- /Create project -->
 
-              <!-- Create project -->
-              <li>
-                <a ui-sref="createProject">{{'MenuNewProject' | translate}}</a>
-              </li>
-              <!-- /Create project -->
-
-              <!-- Projects -->
-              <li>
-                <a ui-sref="projects">{{'MenuProjects' | translate}}</a>
-              </li>
-              <!-- /projects -->
-
+                <!-- Projects -->
+                <li>
+                    <a ui-sref="projects">{{'MenuProjects' | translate}}</a>
+                </li>
+                <!-- /projects -->
             </ul>
-          </div>
-          <!-- /Mobile navigation -->
+        </div>
+        <!-- /Mobile navigation -->
 
-            <!-- Error notifcations -->
-            <zf-notification-set id="error-notifications" position="top-right"></zf-notification-set>
-            <!-- /error notifications -->
+        <!-- Error notifcations -->
+        <zf-notification-set id="error-notifications" position="top-right"></zf-notification-set>
+        <!-- /error notifications -->
 
-            <!-- Success notifications -->
-            <zf-notification-set id="success-notifications" position="top-right"></zf-notification-set>
-            <!-- /success notifications -->
+        <!-- Success notifications -->
+        <zf-notification-set id="success-notifications" position="top-right"></zf-notification-set>
+        <!-- /success notifications -->
 
+
+        <div class="grid-frame vertical">
             <!-- Navigation -->
-            <div class="grid-frame vertical">
-                <div class="grid-content shrink" style="padding: 0;">
-                    <ul id="mobile-top-bar" class="menu-bar dark primary">
-                      <li><a zf-toggle="mobile-slide-in" href="#"><strong>Menu</strong></a></li>
-                      <li><a href="#">Mæcen</a></li>
-                    </ul>
-                </div>
-                <div zf-close="mobile-slide-in" class="grid-frame vertical">
-                    <!-- View injection -->
-                    <div ui-view class="grid-content">
-                    </div>
-                    <!-- /view injection -->
-                </div>
+            <div class="grid-content shrink" style="padding: 0;">
+                <ul id="mobile-top-bar" class="menu-bar dark primary">
+                  <li><a zf-toggle="mobile-slide-in" href="#"><strong>Menu</strong></a></li>
+                  <li><a href="#">Mæcen</a></li>
+                </ul>
             </div>
-          <!-- Navigation -->
-
-    </body>
+            <!-- Navigation -->
+            <div zf-close="mobile-slide-in" class="grid-frame vertical">
+                <!-- View injection -->
+                <div ui-view class="grid-content">
+                </div>
+                <!-- /view injection -->
+            </div>
+        </div>
+  </body>
 </html>

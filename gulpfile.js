@@ -14,6 +14,9 @@ var rimraf    = require('rimraf');
 var addStream = require('add-stream');
 var router    = require('front-router');
 var sequence  = require('run-sequence');
+var svgstore  = require('gulp-svgstore');
+var svgmin    = require('gulp-svgmin');
+var path      = require('path');
 var gulpNgConfig = require('gulp-ng-config');
 
 // Check for --production flag
@@ -27,7 +30,8 @@ var paths = {
   assets: [
     './client/**/*.*',
     '!./client/templates/**/*.*',
-    '!./client/assets/{scss,js}/**/*.*'
+    '!./client/assets/{scss,js}/**/*.*',
+    '!./client/assets/img/*.svg'
   ],
   // Sass will check these folders for files when you use @import.
   sass: [
@@ -63,7 +67,8 @@ var paths = {
     'client/assets/js/filters.js',
     'client/assets/js/services.js',
     'client/assets/js/localization.js',
-    'client/assets/js/auth.js'
+    'client/assets/js/auth.js',
+    'client/assets/js/svgSprite.js'
   ]
 }
 
@@ -169,6 +174,24 @@ gulp.task('uglify:app', function() {
   ;
 });
 
+gulp.task('svgstore', function() {
+ return gulp
+   .src('client/assets/img/*.svg')
+   .pipe(svgmin(function(file) {
+     var prefix = path.basename(file.relative, path.extname(file.relative));
+     return {
+       plugins: [{
+         cleanupIDs: {
+           prefix: prefix + '-',
+           minify: true
+         }
+       }]
+     }
+   }))
+   .pipe(svgstore())
+   .pipe(gulp.dest('./build/assets/img/'));
+});
+
 // Starts a test server, which you can view at http://localhost:8079
 gulp.task('server', ['build'], function() {
   gulp.src('./build')
@@ -184,7 +207,7 @@ gulp.task('server', ['build'], function() {
 
 // Builds your entire app once, without starting a server
 gulp.task('build', function(cb) {
-  sequence('clean', ['copy', 'copy:foundation', 'sass', 'uglify'], 'copy:templates', cb);
+  sequence('clean', ['copy', 'copy:foundation', 'sass', 'uglify', 'svgstore'], 'copy:templates', cb);
 });
 
 gulp.task('deploy', ['build'], function() {
