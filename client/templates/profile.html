@@ -94,10 +94,10 @@ controller: ProfileCtrl
   <!-- Editing -->
   <div class="grid-block" ng-show = "editing == true">
     <div class="grid-content medium-6 small-12">
-      <a class="button alert expand" ng-click="disableEditing()">Annuller</a>
+      <a class="button alert expand" ng-click="disableEditing()">{{'CancelButton' | translate}}</a>
     </div>
     <div class="grid-content medium-6 small-12">
-      <a class="button success expand"  ng-click="submitUpdate()">Opdater</a>
+      <a class="button success expand"  ng-click="submitUpdate()">{{'UpdateButton' | translate}}</a>
     </div>
   </div>
 
