@@ -12,16 +12,18 @@
   </head>
     <body>
           <!-- Mobile navigation -->
-          <div zf-panel="" id="profile-nav" ng-controller="SlideInCtrl">
-            <a zf-close="" class="close-button">×</a>
-            <ul class="menu-bar vertical">
+          <div zf-panel="" id="mobile-slide-in" ng-controller="SlideInCtrl">
+            <ul class="menu-bar vertical" id="mobile-slide-in-nav">
 
-              <!-- Profile -->
+              <!-- Login/profile -->
               <li>
-                <a ui-sref="profile" ng-show="user.first_name"><div id="placeholder_profile_img"></div>{{user.first_name}}</a>
+                <a ui-sref="profile" ng-show="user.first_name">
+                    <div id="placeholder_profile_img"></div>
+                    <span id="profile-bar">{{user.first_name}}</span>
+                </a>
                 <a ui-sref="login" ng-hide="user.first_name">Login</a>
               </li>
-              <!-- /profile -->
+              <!-- /Login/profile -->
 
               <!-- Create project -->
               <li>
@@ -50,12 +52,12 @@
             <!-- Navigation -->
             <div class="grid-frame vertical">
                 <div class="grid-content shrink" style="padding: 0;">
-                    <ul class="menu-bar dark primary">
-                      <li><a zf-toggle="profile-nav" href="#"><strong>Menu</strong></a></li>
+                    <ul id="mobile-top-bar" class="menu-bar dark primary">
+                      <li><a zf-toggle="mobile-slide-in" href="#"><strong>Menu</strong></a></li>
                       <li><a href="#">Mæcen</a></li>
                     </ul>
                 </div>
-                <div class="grid-frame vertical">
+                <div zf-close="mobile-slide-in" class="grid-frame vertical">
                     <!-- View injection -->
                     <div ui-view class="grid-content">
                     </div>

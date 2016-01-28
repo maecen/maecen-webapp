@@ -1,7 +1,58 @@
+@import "foundation";
+
+//====================== COLORS =============
+$purple: #8F2853;
+$deep-purple: #09122C;
+
+#mobile-top-bar {
+  @extend %menu-bar;
+  @include menu-bar-style(
+    $background: rgba($deep-purple, 0.9), // Background color of items
+    $background-hover: rgba($deep-purple, 0), // Background color of item on hover
+    $background-active: rgba($deep-purple, 0.9), // Background color of an active item
+    $color: white, // Text color of items
+    $color-hover: white, // Text color of item on hover
+    $color-active: white, // Text color of item when active
+    $autocolor: false // When true, all the above colors will be derived from $background
+  );
+}
+
+#mobile-slide-in {
+  @extend %panel-base;
+  // Use the style mixin to define visual styles
+  @include panel-style(
+          $padding: 1rem,
+          $background: $deep-purple
+  );
+}
+
+#mobile-slide-in-nav {
+  padding: 0px;
+  margin: 0px;
+  @extend %menu-bar;
+  @include menu-bar-layout(
+          $orientation: vertical, // Can be horizontal or vertical
+          $stretch: true // Set to false for a condensed menu
+  );
+  @include menu-bar-style(
+          $background: rgba($deep-purple, 0.9), // Background color of items
+          $background-hover: rgba($deep-purple, 0), // Background color of item on hover
+          $background-active: rgba($deep-purple, 0.9), // Background color of an active item
+          $color: white, // Text color of items
+          $color-hover: white, // Text color of item on hover
+          $color-active: white, // Text color of item when active
+          $autocolor: false // When true, all the above colors will be derived from $background
+  );
+}
+
 #placeholder_profile_img {
   border-radius: 50%;
-  width: 2rem;
-  height: 2rem;
-  background: green;
-  padding-right: 1rem;
+  width: 3rem;
+  height: 3rem;
+  background: $purple;
+  margin-right: 0.7rem;
+}
+
+#profile-bar {
+  font-size: 1.2rem;
 }
