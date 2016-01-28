@@ -10,58 +10,59 @@
     <script src="./assets/js/routes.js"></script>
     <script src="./assets/js/app.js"></script>
   </head>
-  <body>
+    <body>
+          <!-- Mobile navigation -->
+          <div zf-panel="" id="profile-nav" ng-controller="SlideInCtrl">
+            <a zf-close="" class="close-button">×</a>
+            <ul class="menu-bar vertical">
 
-    <!-- Mobile navigation -->
-    <div zf-panel="" id="profile-nav" ng-controller="SlideInCtrl">
-      <a zf-close="" class="close-button">×</a>
-      <ul class="menu-bar vertical">
+              <!-- Profile -->
+              <li>
+                <a ui-sref="profile" ng-show="user.first_name"><div id="placeholder_profile_img"></div>{{user.first_name}}</a>
+                <a ui-sref="login" ng-hide="user.first_name">Login</a>
+              </li>
+              <!-- /profile -->
 
-        <!-- Profile -->
-        <li>
-          <a ui-sref="profile" ng-show="user.email">{{user.email}}</a>
-          <a ui-sref="login" ng-hide="user.email">Login</a>
-        </li>
-        <!-- /profile -->
+              <!-- Create project -->
+              <li>
+                <a ui-sref="createProject">{{'MenuNewProject' | translate}}</a>
+              </li>
+              <!-- /Create project -->
 
-        <!-- Create project -->
-        <li>
-          <a ui-sref="createProject">{{'MenuNewProject' | translate}}</a>
-        </li>
-        <!-- /Create project -->
+              <!-- Projects -->
+              <li>
+                <a ui-sref="projects">{{'MenuProjects' | translate}}</a>
+              </li>
+              <!-- /projects -->
 
-        <!-- Projects -->
-        <li>
-          <a ui-sref="projects">{{'MenuProjects' | translate}}</a>
-        </li>
-        <!-- /projects -->
+            </ul>
+          </div>
+          <!-- /Mobile navigation -->
 
-      </ul>
-    </div>
-    <!-- /Mobile navigation -->
+            <!-- Error notifcations -->
+            <zf-notification-set id="error-notifications" position="top-right"></zf-notification-set>
+            <!-- /error notifications -->
 
-    <!-- Error notifcations -->
-    <zf-notification-set id="error-notifications" position="top-right"></zf-notification-set>
-    <!-- /error notifications -->
+            <!-- Success notifications -->
+            <zf-notification-set id="success-notifications" position="top-right"></zf-notification-set>
+            <!-- /success notifications -->
 
-    <!-- Success notifications -->
-    <zf-notification-set id="success-notifications" position="top-right"></zf-notification-set>
-    <!-- /success notifications -->
+            <!-- Navigation -->
+            <div class="grid-frame vertical">
+                <div class="grid-content shrink" style="padding: 0;">
+                    <ul class="menu-bar dark primary">
+                      <li><a zf-toggle="profile-nav" href="#"><strong>Menu</strong></a></li>
+                      <li><a href="#">Mæcen</a></li>
+                    </ul>
+                </div>
+                <div class="grid-frame vertical">
+                    <!-- View injection -->
+                    <div ui-view class="grid-content">
+                    </div>
+                    <!-- /view injection -->
+                </div>
+            </div>
+          <!-- Navigation -->
 
-    <!-- Navigation -->
-    <ul class="menu-bar dark primary">
-      <li><a zf-toggle="profile-nav" href="#"><strong>Menu</strong></a></li>
-      <li><a href="#">Mæcen</a></li>
-    </ul>
-    <!-- Navigation -->
-
-    <div class="grid-frame vertical">
-      <div class="grid-content" style="padding: 0;">
-      </div>
-      <!-- View injection -->
-      <div ui-view class="grid-content">
-      </div>
-      <!-- /view injection -->
-    </div>
-  </body>
+    </body>
 </html>
