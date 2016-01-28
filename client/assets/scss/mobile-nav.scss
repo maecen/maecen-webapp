@@ -5,6 +5,7 @@ $purple: #8F2853;
 $deep-purple: #09122C;
 
 #mobile-top-bar {
+  font-family: 'Merriweather Sans', sans-serif;
   @extend %menu-bar;
   @include menu-bar-style(
     $background: rgba($deep-purple, 0.9), // Background color of items
@@ -18,6 +19,7 @@ $deep-purple: #09122C;
 }
 
 #mobile-slide-in {
+  font-family: 'Merriweather Sans', sans-serif;
   padding: 0rem;
   margin: 0rem;
   @extend %panel-base;
@@ -29,6 +31,7 @@ $deep-purple: #09122C;
 }
 
 #mobile-slide-in-nav {
+  font-family: 'Merriweather Sans', sans-serif;
   padding: 0rem;
   margin: 0rem;
   @extend %menu-bar;
@@ -40,11 +43,18 @@ $deep-purple: #09122C;
           $background: rgba($deep-purple, 0.9), // Background color of items
           $background-hover: rgba($deep-purple, 0), // Background color of item on hover
           $background-active: rgba($deep-purple, 0.9), // Background color of an active item
-          $color: red, // Text color of items
+          $color: rgba($gray, 0.6), // Text color of items
           $color-hover: $gray, // Text color of item on hover
-          $color-active: green, // Text color of item when active
           $autocolor: false // When true, all the above colors will be derived from $background
   );
+  .is-active {
+    color: white;
+  }
+  .title {
+    color: $purple;
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
 }
 
 #placeholder_profile_img {

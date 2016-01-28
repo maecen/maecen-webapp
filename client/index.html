@@ -16,30 +16,41 @@
         <!-- Mobile navigation -->
         <div zf-panel="" id="mobile-slide-in" ng-controller="SlideInCtrl">
             <ul class="menu-bar vertical" id="mobile-slide-in-nav">
-                <li>
-                    <a zf-close="">close</a>
-                </li>
                 <!-- Login/profile -->
                 <li>
-                    <a ui-sref="profile" ng-show="user.first_name">
+                    <a ui-sref="profile" ui-sref-active="is-active" ng-show="user.first_name">
                         <div id="placeholder_profile_img"></div>
                         <span id="profile-bar">{{user.first_name}}</span>
                     </a>
                     <a ui-sref="login" ng-hide="user.first_name">Login</a>
                 </li>
                 <!-- /Login/profile -->
-
+                <!-- Maecenates -->
+                <li>
+                    <a class="title" href="#">Created maecenates</a>
+                </li>
+                <!-- /macenates -->
                 <!-- Create project -->
                 <li>
-                    <a ui-sref="createProject" class="is-active">{{'MenuNewProject' | translate}}</a>
+                    <a ui-sref="createProject" ui-sref-active="is-active">Create maecenate</a>
                 </li>
                 <!-- /Create project -->
-
-                <!-- Projects -->
+                <!-- View maecenates -->
                 <li>
-                    <a ui-sref="projects">{{'MenuProjects' | translate}}</a>
+                    <a ui-sref="projects" ui-sref-active="is-active">View created maecenates</a>
                 </li>
-                <!-- /projects -->
+                <!-- /View maecenates-->
+                <!-- Supported macenates -->
+                <li>
+                    <a class="title" href="#">Supported macenates</a>
+                </li>
+                <li>
+                    <a>View supported maecenates</a>
+                </li>
+                <!-- /Supported macenates-->
+                <li>
+                    <a zf-close="">close</a>
+                </li>
             </ul>
         </div>
         <!-- /Mobile navigation -->
@@ -57,7 +68,7 @@
             <!-- Navigation -->
             <div class="grid-content shrink" style="padding: 0;">
                 <ul id="mobile-top-bar" class="menu-bar dark primary">
-                  <li><a zf-open="mobile-slide-in" href="#"><strong>Menu</strong></a></li>
+                  <li><a zf-toggle="mobile-slide-in" href="#"><strong>Menu</strong></a></li>
                   <li><a href="#">Mæcen</a></li>
                 </ul>
             </div>
