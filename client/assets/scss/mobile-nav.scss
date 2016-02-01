@@ -19,18 +19,17 @@ $deep-purple: #09122C;
 
   align-items: center;
 
-  .menu-bar {
-    .home-link {
-      padding: 0.5rem;
+  .home-link {
+    padding: 0.5rem;
 
-      svg {
-        fill: white;
-        padding: 0;
-        height: 2rem;
-        width: 2rem;
-      }
+    svg {
+      fill: white;
+      padding: 0;
+      height: 2rem;
+      width: 2rem;
     }
   }
+
 }
 
 #mobile-slide-in {

@@ -74,9 +74,7 @@
        }
      };
 
-     // Filthy fileupload logic...
      $scope.coverImageChanged = function(){
-       console.log("Called it!");
        var file = document.getElementById('cover_image_upload').files[0];
        fileReader = new FileReader();
        fileReader.onloadend = function(){
@@ -86,29 +84,23 @@
      };
 
      $scope.logoChanged = function(){
-       console.log("Logo input changed");
        var file = document.getElementById('logo_upload').files[0];
        fileReader = new FileReader();
        fileReader.onloadend = function(){
          $scope.newProject.project.logo = fileReader.result;
-          console.log("Loaded dat logo!");
        }
        fileReader.readAsDataURL(file);
      };
 
      $scope.createProject = function(){
-       console.log($scope.newProject.project.cover_image);
-       //console.log($auth.retrieveData('auth_headers'));
-
        var project = new Project($scope.newProject);
        project.$save().then(function(resp) {
-         // handle success response
-         console.log(resp);
+         FoundationApi.publish('success-notifications', {content: 'Success', color: "success", autoclose: 1500 });
+         $location.url("/projects");
        })
        .catch(function(resp) {
-         // handle error response
          console.log(resp);
-         //FoundationApi.publish('error-notifications', { title: 'Fejl!', content: resp.data.errors });
+         FoundationApi.publish('error-notifications', {content: resp.data.errors, color: "alert", autoclose: 1500 });
        });
      };
 
@@ -147,7 +139,6 @@
           .then(function(resp) {
             // handle success response
             FoundationApi.publish('success-notifications', {content: 'Du er nu logget ud', color: "success", autoclose: 1500 });
-            console.log(resp);
             $location.url("/");
           })
           .catch(function(resp) {
