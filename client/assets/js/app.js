@@ -46,8 +46,9 @@
     $locationProvider.hashPrefix('!');
   }
 
-  function run() {
+  function run($rootScope) {
     FastClick.attach(document.body);
+    $rootScope.ready = true;
   }
 
 })();
