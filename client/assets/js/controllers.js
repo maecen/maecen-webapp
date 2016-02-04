@@ -107,9 +107,15 @@
   })
   /*=============================== PROJECTS CONTROLLER =================================*/
 
-  .controller("ProjectsCtrl", function($scope, $stateParams, $auth, $http, Project, FoundationApi) {
+  .controller("ProjectsCtrl", function($scope, $state, $stateParams, Project, FoundationApi) {
+    $scope.$state = $state;
     $scope.projects = Project.query();
-    console.log($stateParams.id);
+    //console.log($stateParams.id);
+  })
+
+  .controller("ProjectShowCtrl", function($scope, $stateParams, Project, FoundationApi) {
+    $scope.project = Project.get({id:$stateParams.id});
+    //console.log($stateParams.id);
   })
 
   /*=============================== PROFILE CONTROLLER =================================*/

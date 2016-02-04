@@ -1,0 +1,29 @@
+---
+name: projects.show
+url: /:id
+controller: ProjectShowCtrl
+---
+
+<div class="grid-block project view-narrow">
+  <div class="grid-content small-12">
+    <h2 class="project-title">{{ project.title }}</h2>
+  </div>
+  <div class="medium-2 grid-content">
+    <img class="project-logo" src="{{ project.logo_url }}">
+    <div class="project-info">
+      <p>Maecens:</p>
+      <p>{{ project.subscribers.length }}</p>
+      <p>Content posts:</p>
+      <p>0</p>
+      <p>Min. amount:</p>
+      <p>1€</p>
+    </div>
+  </div>
+  <div class="medium-10 grid-content">
+    <div class="project-cover">
+      <img src="{{ project.cover_image_url }}">
+    </div>
+    <p class="project-teaser">{{ project.teaser }}</p>
+    <p>{{ project.description }}</p>
+  </div>
+</div>

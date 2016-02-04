@@ -39,11 +39,11 @@
     $urlProvider.otherwise('/');
 
     $locationProvider.html5Mode({
-      enabled: true,
+      enabled: false,
       requireBase: false
     });
 
-    $locationProvider.hashPrefix('!');
+    //$locationProvider.hashPrefix('!');
   }
 
   function run($rootScope) {

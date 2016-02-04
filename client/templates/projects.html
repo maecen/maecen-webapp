@@ -1,22 +1,24 @@
 ---
 name: projects
-url: /projects?user_id
+url: /projects
 controller: ProjectsCtrl
 ---
-
-<div class="grid-block project-list">
+<div ui-view></div>
+<div ng-show="$state.current.name === 'projects'" class="grid-block project-list view-narrow">
   <div ng-repeat="project in projects" class="grid-content medium-6 padding">
-    <div class="project">
-      <div class="project-header">
-        <img src="{{ project.logo_url }}">
-        <p>{{ project.title }}</p>
+    <a class="project-card-link" ui-sref="projects.show({id:project.id})">
+      <div class="project-card">
+        <div class="project-header">
+          <img src="{{ project.logo_url }}">
+          <p>{{ project.title }}</p>
+        </div>
+        <div class="img-holder">
+          <img src="{{ project.cover_image_url }}">
+        </div>
+        <div class="teaser">
+          {{ project.teaser }}
+        </div>
       </div>
-      <div class="img-holder">
-        <img src="{{ project.cover_image_url }}">
-      </div>
-      <div class="teaser">
-        {{ project.teaser }}
-      </div>
-    </div>
+    </a>
   </div>
 </div>
