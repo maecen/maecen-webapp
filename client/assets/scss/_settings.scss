@@ -99,7 +99,7 @@
 
 // Application Colors
 // $primary-color: #00558b;
-$primary-color: #8F2853;
+$primary-color: #C69C76;
 // $secondary-color: #f1f1f1;
 // $alert-color: #F04124;
 $alert-color: #EA0028;
@@ -252,7 +252,7 @@ $gray: #E4E5EB;
 // $button-style: solid;
 $button-background: $primary-color;
 $button-background-hover: scale-color($button-background, $lightness: 15%);
-// $button-color: auto;
+$button-color: white;
 // $button-radius: 0;
 // $button-sizes: (
 //   tiny: 0.7,

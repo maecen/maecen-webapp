@@ -4,12 +4,35 @@
 $purple: #8F2853;
 $deep-purple: #09122C;
 
+.topbar {
+  display: flex;
+  align-items: center;
+  padding-top: 2rem;
+
+  .logo {
+    margin-left: 1rem;
+
+    svg {
+      fill: white;
+      height: 4rem;
+      width: 4rem;
+    }
+  }
+
+  .topbar-buttons {
+    margin-left: auto;
+    .button {
+      margin-bottom: 0;
+    }
+  }
+}
+
 #mobile-top-bar {
   font-family: 'Merriweather Sans', sans-serif;
   @extend %menu-bar;
   @include menu-bar-style(
-    $background: rgba($deep-purple, 0.9), // Background color of items
-    $background-hover: rgba($deep-purple, 0), // Background color of item on hover
+    $background: transparent, // Background color of items
+    $background-hover: rgba($deep-purple, 0.5), // Background color of item on hover
     $background-active: rgba($deep-purple, 0.9), // Background color of an active item
     $color: white, // Text color of items
     $color-hover: white, // Text color of item on hover
@@ -81,4 +104,10 @@ $deep-purple: #09122C;
 
 #profile-bar {
   font-size: 1.2rem;
+}
+
+@media (min-width: 1000px) {
+  .topbar {
+    margin: 0 6rem;
+  }
 }

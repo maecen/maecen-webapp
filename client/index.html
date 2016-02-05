@@ -69,12 +69,24 @@
         <div class="grid-frame vertical">
             <!-- Navigation -->
             <div class="grid-content shrink" style="padding: 0;">
-                <ul id="mobile-top-bar" class="menu-bar dark primary">
+                <!--<ul id="mobile-top-bar" class="menu-bar">
                   <li><a ui-sref="home" class="home-link">
                     <svg><use xlink:href="#logo" /></svg>
                   </a></li>
                   <li><a zf-toggle="mobile-slide-in" href="#"><strong>Menu</strong></a></li>
-                </ul>
+                </ul> -->
+                <div class="topbar">
+                  <div class="logo">
+                    <a ui-sref="home" class="home-link">
+                      <svg><use xlink:href="#logo" /></svg>
+                    </a>
+                  </div>
+                  <div class="topbar-buttons">
+                    <button ui-sref="createProject" class="button button-golden">Create Maecenate</button>
+                    <button ng-if="!user.email" ui-sref="login" class="button">Log in</button>
+                    <button ng-if="user.email" ui-sref="profile" class="button">Profile</button>
+                  </div>
+                </div>
             </div>
             <!-- Navigation -->
             <div class="grid-frame vertical">

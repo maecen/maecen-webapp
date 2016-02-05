@@ -3,109 +3,105 @@ name: profile
 url: /profile
 controller: ProfileCtrl
 ---
-
 <div class="grid-container">
   <!-- Logged in as -->
-  <div class="grid-block">
+  <div class="grid-block padding-top">
     <div class="grid-content">
-      <h3 class="text-center"><strong>{{user.email}}</strong></h3>
+      <div class="card">
+        <div class="card-divider">
+          <h3 class="text-center"><strong>{{user.email}}</strong></h3>
+        </div>
+        <div class="card-section">
+          <div class="grid-block">
+            <div class="grid-content">
+              <hr/>
+            </div>
+          </div>
+
+          <div class="grid-block">
+            <div class="grid-content">
+              <select name="languageSelect" ng-model="selectedLanguage">
+                <option value="da">Dansk</option>
+                <option value="en">English</option>
+              </select>
+            </div>
+          </div>
+
+
+          <form>
+            <!-- First-/lastname -->
+            <div class="grid-block">
+              <div class="grid-content small-12 medium-6">
+                <span class="label">{{'FirstName' | translate}}</span>
+                <input ng-model="user.first_name" ng-readonly="editing != true" type="text" placeholder="{{'FirstName' | translate}}">
+              </div>
+              <div class="grid-content small-12 medium-6">
+                <span class="label">{{'LastName' | translate}}</span>
+                <input ng-model="user.last_name" ng-readonly="editing == false" type="text" placeholder="{{'LastName' | translate}}">
+              </div>
+            </div>
+            <!-- /first-/lastname -->
+
+            <!-- Mail -->
+            <div class="grid-block">
+              <div class="grid-content">
+                <span class="label">Email</span>
+                <input ng-model="user.email" ng-readonly="editing == false" type="text" placeholder="Email">
+              </div>
+            </div>
+            <!-- /mail -->
+
+
+
+            <!-- Alias -->
+            <div class="grid-block">
+              <div class="grid-content medium-6 small-6">
+                <span class="label">Alias</span>
+                <input ng-model="user.nickname" ng-readonly="editing == false" type="text" placeholder="Alias">
+              </div>
+              <div class="grid-content medium-6 small-6">
+                <span class="label">{{'PhoneNumber' | translate}}</span>
+                <input ng-model="user.phone_number" ng-readonly="editing == false" type="text" placeholder="{{'PhoneNumber' | translate}}">
+              </div>
+            </div>
+            <!-- /alias -->
+
+            <!-- Country and zip -->
+            <div class="grid-block">
+              <div class="grid-content medium-6 small-6">
+                <span class="label">{{'Country' | translate}}</span>
+                <input ng-model="user.country" ng-readonly="editing == false" type="text" placeholder="{{'Country' | translate}}">
+              </div>
+              <div class="grid-content medium-6 small-6">
+               <span class="label">{{'ZipCode' | translate}}</span>
+                  <input ng-model="user.zip_code" ng-readonly="editing == false" type="text" placeholder="{{'ZipCode' | translate}}">
+              </div>
+            </div>
+            <!-- /country and zip -->
+
+          </form>
+
+          <!-- Editing -->
+          <div class="grid-block" ng-show = "editing == true">
+            <div class="grid-content medium-6 small-12">
+              <a class="button alert expand" ng-click="disableEditing()">{{'CancelButton' | translate}}</a>
+            </div>
+            <div class="grid-content medium-6 small-12">
+              <a class="button success expand"  ng-click="submitUpdate()">{{'UpdateButton' | translate}}</a>
+            </div>
+          </div>
+
+          <!-- Country and zip -->
+          <div class="grid-block">
+            <div class="grid-content small-12">
+              <a class="button success expand" ng-show="editing == false" ng-click="enableEditing()">{{'EditButton' | translate}}</a>
+            </div>
+            <div class="grid-content small-12">
+             <a class="button alert expand hollow" ng-click="signOut()">{{'SignOut' | translate}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <!-- /logged in as -->
-
-  <div class="grid-block">
-    <div class="grid-content">
-      <hr/>
-    </div>
-  </div>
-
-  <div class="grid-block">
-    <div class="grid-content">
-      <select name="languageSelect" ng-model="selectedLanguage">
-        <option value="da">Dansk</option>
-        <option value="en">English</option>
-      </select>
-    </div>
-  </div>
-
-
-  <form>
-    <!-- First-/lastname -->
-    <div class="grid-block">
-      <div class="grid-content small-12 medium-6">
-        <span class="label">{{'FirstName' | translate}}</span>
-        <input ng-model="user.first_name" ng-readonly="editing != true" type="text" placeholder="{{'FirstName' | translate}}">
-      </div>
-      <div class="grid-content small-12 medium-6">
-        <span class="label">{{'LastName' | translate}}</span>
-        <input ng-model="user.last_name" ng-readonly="editing == false" type="text" placeholder="{{'LastName' | translate}}">
-      </div>
-    </div>
-    <!-- /first-/lastname -->
-
-    <!-- Mail -->
-    <div class="grid-block">
-      <div class="grid-content">
-        <span class="label">Email</span>
-        <input ng-model="user.email" ng-readonly="editing == false" type="text" placeholder="Email">
-      </div>
-    </div>
-    <!-- /mail -->
-
-
-
-    <!-- Alias -->
-    <div class="grid-block">
-      <div class="grid-content medium-6 small-6">
-        <span class="label">Alias</span>
-        <input ng-model="user.nickname" ng-readonly="editing == false" type="text" placeholder="Alias">
-      </div>
-      <div class="grid-content medium-6 small-6">
-        <span class="label">{{'PhoneNumber' | translate}}</span>
-        <input ng-model="user.phone_number" ng-readonly="editing == false" type="text" placeholder="{{'PhoneNumber' | translate}}">
-      </div>
-    </div>
-    <!-- /alias -->
-
-    <!-- Country and zip -->
-    <div class="grid-block">
-      <div class="grid-content medium-6 small-6">
-        <span class="label">{{'Country' | translate}}</span>
-        <input ng-model="user.country" ng-readonly="editing == false" type="text" placeholder="{{'Country' | translate}}">
-      </div>
-      <div class="grid-content medium-6 small-6">
-       <span class="label">{{'ZipCode' | translate}}</span>
-          <input ng-model="user.zip_code" ng-readonly="editing == false" type="text" placeholder="{{'ZipCode' | translate}}">
-      </div>
-    </div>
-    <!-- /country and zip -->
-
-  </form>
-
-  <!-- Editing -->
-  <div class="grid-block" ng-show = "editing == true">
-    <div class="grid-content medium-6 small-12">
-      <a class="button alert expand" ng-click="disableEditing()">{{'CancelButton' | translate}}</a>
-    </div>
-    <div class="grid-content medium-6 small-12">
-      <a class="button success expand"  ng-click="submitUpdate()">{{'UpdateButton' | translate}}</a>
-    </div>
-  </div>
-
-  <!-- Country and zip -->
-  <div class="grid-block">
-    <div class="grid-content small-12">
-      <a class="button success expand" ng-show="editing == false" ng-click="enableEditing()">{{'EditButton' | translate}}</a>
-    </div>
-    <div class="grid-content small-12">
-     <a class="button alert expand hollow" ng-click="signOut()">{{'SignOut' | translate}}</a>
-    </div>
-  </div>
-
-
-
-  <!-- Editing -->
-
-
-
 </div>
