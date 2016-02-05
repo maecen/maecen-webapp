@@ -82,9 +82,9 @@
                     </a>
                   </div>
                   <div class="topbar-buttons">
-                    <button ui-sref="createProject" class="button button-golden">Create Maecenate</button>
-                    <button ng-if="!user.email" ui-sref="login" class="button">Log in</button>
-                    <button ng-if="user.email" ui-sref="profile" class="button">Profile</button>
+                    <button ui-sref="createProject" class="button button-golden">{{'CreateMaecenate' | translate}}</button>
+                    <button ng-if="!user.email" ui-sref="login" class="button">{{'SignIn' | translate}}</button>
+                    <button ng-if="user.email" ui-sref="profile" class="button">{{'Profile' | translate}}</button>
                   </div>
                 </div>
             </div>

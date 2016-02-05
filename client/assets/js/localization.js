@@ -36,10 +36,12 @@ angular.module("application")
     CancelButton: "Annuller",
     SignIn: "Log in",
     SignOut: "Log ud",
+    Profile: "Profil",
 
     /*======= Projects ============*/
     MenuProjects: "Alle projekter",
     MaecenGroups: "Mæcen grupper",
+    CreateMaecenate: "Nyt Mæcenat",
     /*======= /projects ============*/
 
     /*======== Create projects ======*/
@@ -58,10 +60,11 @@ angular.module("application")
 
     /*======= Projects ============*/
     MaecenGroups: "Mæcen grupper",
+    AllMaecenates: "Se alle Mæcenater",
     /*======= /projects ============*/
 
     /*======== Create projects ======*/
-    CreateProjectTitel: "Opret projekt",
+    CreateProjectTitel: "Nyt Mæcenat",
     NewProjectTitel: "Titel",
     ProjectLogo: "Logo",
     ProjectCategory: "Kategori",
@@ -103,14 +106,17 @@ angular.module("application")
     SignOut: "Sign out",
     UpdateButton: "Update",
     CancelButton: "Cancel",
+    Profile: "Profile",
 
     /*======= Projects ============*/
     MenuProjects: "All projects",
     MaecenGroups: "Maecen groups",
+    CreateMaecenate: "Create Maecenate",
+    AllMaecenates: "See all Maecenates",
     /*======= /projects ============*/
 
     /*======== Create projects ======*/
-    MenuNewProject: "New project",
+    MenuNewProject: "New Maecenate",
     CreateProjectTitel: "Create project",
     NewProjectTitel: "Title",
     ProjectLogo: "Logo",
