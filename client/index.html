@@ -65,36 +65,21 @@
         <zf-notification-set id="success-notifications" position="top-right"></zf-notification-set>
         <!-- /success notifications -->
 
-
-        <div class="grid-frame vertical">
-            <!-- Navigation -->
-            <div class="grid-content shrink" style="padding: 0;">
-                <!--<ul id="mobile-top-bar" class="menu-bar">
-                  <li><a ui-sref="home" class="home-link">
-                    <svg><use xlink:href="#logo" /></svg>
-                  </a></li>
-                  <li><a zf-toggle="mobile-slide-in" href="#"><strong>Menu</strong></a></li>
-                </ul> -->
-                <div class="topbar">
-                  <div class="logo">
-                    <a ui-sref="home" class="home-link">
-                      <svg><use xlink:href="#logo" /></svg>
-                    </a>
-                  </div>
-                  <div class="topbar-buttons">
-                    <button ui-sref="createProject" class="button button-golden">{{'CreateMaecenate' | translate}}</button>
-                    <button ng-if="!user.email" ui-sref="login" class="button">{{'SignIn' | translate}}</button>
-                    <button ng-if="user.email" ui-sref="profile" class="button">{{'Profile' | translate}}</button>
-                  </div>
-                </div>
+        <div class="grid-content shrink" style="padding: 0;">
+          <div class="topbar">
+            <div class="logo">
+              <a ui-sref="home" class="home-link">
+                <svg><use xlink:href="#logo" /></svg>
+              </a>
             </div>
-            <!-- Navigation -->
-            <div class="grid-frame vertical">
-                <!-- View injection -->
-                <div ui-view class="grid-content">
-                </div>
-                <!-- /view injection -->
+            <div class="topbar-buttons">
+              <button ui-sref="createProject" class="button button-golden">{{'CreateMaecenate' | translate}}</button>
+              <button ng-if="!user.email" ui-sref="login" class="button">{{'SignIn' | translate}}</button>
+              <button ng-if="user.email" ui-sref="profile" class="button">{{'Profile' | translate}}</button>
             </div>
+          </div>
         </div>
+        
+        <div ui-view class="grid-content"></div>
   </body>
 </html>

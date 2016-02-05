@@ -70,10 +70,15 @@ textarea{
 }
 
 html{
-  font-size: 80%;
+  p {
+    font-size: 80%;
+  }
+  height: 100%;
 }
 
 body {
+    margin: 0;
+    height: 100%;
     background-color: rgba(43, 45, 47, 1);
     /* IE9, iOS 3.2+ */
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxyYWRpYWxHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIGN4PSIwJSIgY3k9IjE3OSUiIHI9IjE3OSUiPjxzdG9wIHN0b3AtY29sb3I9IiMyMTIyMjUiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwIi8+PHN0b3Agc3RvcC1jb2xvcj0iIzIxMjIyNSIgc3RvcC1vcGFjaXR5PSIxIiBvZmZzZXQ9IjAuMTUiLz48c3RvcCBzdG9wLWNvbG9yPSIjMzAzMjM0IiBzdG9wLW9wYWNpdHk9IjEiIG9mZnNldD0iMC4zMyIvPjxzdG9wIHN0b3AtY29sb3I9IiM0MDQxNDMiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwLjUiLz48c3RvcCBzdG9wLWNvbG9yPSIjMzAzMjM0IiBzdG9wLW9wYWNpdHk9IjEiIG9mZnNldD0iMC42NiIvPjxzdG9wIHN0b3AtY29sb3I9IiMyMTIyMjUiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwLjg1Ii8+PHN0b3Agc3RvcC1jb2xvcj0iIzIxMjIyNSIgc3RvcC1vcGFjaXR5PSIxIiBvZmZzZXQ9IjEiLz48L3JhZGlhbEdyYWRpZW50PjxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCN2c2dnKSIgLz48L3N2Zz4=);
@@ -81,15 +86,13 @@ body {
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxyYWRpYWxHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIGN4PSIwJSIgY3k9IjE3OSUiIHI9IjE3OSUiPjxzdG9wIHN0b3AtY29sb3I9IiMyMTIyMjUiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwIi8+PHN0b3Agc3RvcC1jb2xvcj0iIzIxMjIyNSIgc3RvcC1vcGFjaXR5PSIxIiBvZmZzZXQ9IjAuMTUiLz48c3RvcCBzdG9wLWNvbG9yPSIjMzAzMjM0IiBzdG9wLW9wYWNpdHk9IjEiIG9mZnNldD0iMC4zMyIvPjxzdG9wIHN0b3AtY29sb3I9IiM0MDQxNDMiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwLjUiLz48c3RvcCBzdG9wLWNvbG9yPSIjMzAzMjM0IiBzdG9wLW9wYWNpdHk9IjEiIG9mZnNldD0iMC42NiIvPjxzdG9wIHN0b3AtY29sb3I9IiMyMTIyMjUiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwLjg1Ii8+PHN0b3Agc3RvcC1jb2xvcj0iIzIxMjIyNSIgc3RvcC1vcGFjaXR5PSIxIiBvZmZzZXQ9IjEiLz48L3JhZGlhbEdyYWRpZW50PjxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCN2c2dnKSIgLz48L3N2Zz4=);
 
     background-image: radial-gradient(circle farthest-side at left 179px,rgb(33, 34, 37) 0%,rgb(33, 34, 37) 15%,rgb(48, 50, 52) 33%,rgb(64, 65, 67) 50%,rgb(48, 50, 52) 66%,rgb(33, 34, 37) 85%,rgb(33, 34, 37) 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 ::-webkit-scrollbar {
     width: 0px;  /* remove scrollbar space */
     background: transparent;  /* optional: just make scrollbar invisible */
-}
-/* optional: show position indicator in red */
-::-webkit-scrollbar-thumb {
-    background: #FF0000;
 }
 
 /* IE8- CSS hack */
@@ -101,6 +104,12 @@ body {
 
 @media (min-width: 500px) {
   html{
-    font-size: 100%;
+    p {font-size: 70%};
+  }
+}
+
+@media (max-width: 500px) {
+  .button {
+    font-size: 60%;
   }
 }
